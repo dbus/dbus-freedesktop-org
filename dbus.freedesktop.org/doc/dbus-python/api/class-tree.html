@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink"><a href="dbus.proxies._DeferredMethod-class.html" onclick="show_private();">dbus.proxies._DeferredMethod</a></strong>:
+      <em class="summary">A proxy method which will only get called once we have its
+introspection reply.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.proxies._ProxyMethod-class.html" onclick="show_private();">dbus.proxies._ProxyMethod</a></strong>:
+      <em class="summary">A proxy method.</em>
+    </li>
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.DBusException-class.html">dbus.exceptions.DBusException</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.IntrospectionParserException-class.html">dbus.exceptions.IntrospectionParserException</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.MissingErrorHandlerException-class.html">dbus.exceptions.MissingErrorHandlerException</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.MissingReplyHandlerException-class.html">dbus.exceptions.MissingReplyHandlerException</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.NameExistsException-class.html">dbus.exceptions.NameExistsException</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.UnknownMethodException-class.html">dbus.exceptions.UnknownMethodException</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.exceptions.ValidationException-class.html">dbus.exceptions.ValidationException</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.service.BusName-class.html">dbus.service.BusName</a></strong>:
+      <em class="summary">A base class for exporting your own Named Services across the Bus.</em>
+    </li>
+    <li> <strong class="uidlink">_dbus_bindings.Connection</strong>:
+      <em class="summary">A D-Bus connection.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.connection.Connection-class.html">dbus.connection.Connection</a></strong>:
+      <em class="summary">A connection to another application. In this base class there is
+assumed to be no bus daemon.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.bus.BusConnection-class.html">dbus.bus.BusConnection</a></strong>:
+      <em class="summary">A connection to a D-Bus daemon that implements the
+<tt class="rst-docutils literal">org.freedesktop.DBus</tt> pseudo-service.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus._dbus.Bus-class.html">dbus._dbus.Bus</a></strong>:
+      <em class="summary">A connection to one of three possible standard buses, the SESSION,
+SYSTEM, or STARTER bus. This class manages shared connections to those
+buses.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus._dbus.SessionBus-class.html">dbus._dbus.SessionBus</a></strong>:
+      <em class="summary">The session (current login) message bus.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus._dbus.StarterBus-class.html">dbus._dbus.StarterBus</a></strong>:
+      <em class="summary">The bus that activated this process (only valid if
+this process was launched by DBus activation).</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus._dbus.SystemBus-class.html">dbus._dbus.SystemBus</a></strong>:
+      <em class="summary">The system-wide message bus.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">gi._gobject._gobject.GObject</strong>:
+      <em class="summary">Object GObject</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.gobject_service.ExportedGObject-class.html">dbus.gobject_service.ExportedGObject</a></strong>:
+      <em class="summary">A GObject which is exported on the D-Bus.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.proxies.Interface-class.html">dbus.proxies.Interface</a></strong>:
+      <em class="summary">An interface into a remote object.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.service.Interface-class.html" onclick="show_private();">dbus.service.Interface</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.service.Object-class.html">dbus.service.Object</a></strong>:
+      <em class="summary">A base class for exporting your own Objects across the Bus.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.gobject_service.ExportedGObject-class.html">dbus.gobject_service.ExportedGObject</a></strong>:
+      <em class="summary">A GObject which is exported on the D-Bus.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.service.FallbackObject-class.html" onclick="show_private();">dbus.service.FallbackObject</a></strong>:
+      <em class="summary">An object that implements an entire subtree of the object-path
+tree.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.Message-class.html">dbus.lowlevel.Message</a></strong>:
+      <em class="summary">A message to be sent or received over a D-Bus Connection.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.ErrorMessage-class.html">dbus.lowlevel.ErrorMessage</a></strong>:
+      <em class="summary">An error message.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.MethodCallMessage-class.html">dbus.lowlevel.MethodCallMessage</a></strong>:
+      <em class="summary">A method-call message.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.MethodReturnMessage-class.html">dbus.lowlevel.MethodReturnMessage</a></strong>:
+      <em class="summary">A method-return message.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.SignalMessage-class.html">dbus.lowlevel.SignalMessage</a></strong>:
+      <em class="summary">A signal message.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.bus.NameOwnerWatch-class.html">dbus.bus.NameOwnerWatch</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.mainloop.NativeMainLoop-class.html">dbus.mainloop.NativeMainLoop</a></strong>:
+      <em class="summary">Object representing D-Bus main loop integration done in native code.
+Cannot be instantiated directly.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel.PendingCall-class.html">dbus.lowlevel.PendingCall</a></strong>:
+      <em class="summary">Object representing a pending D-Bus call, returned by
+Connection.send_message_with_reply(). Cannot be instantiated directly.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.proxies.ProxyObject-class.html">dbus.proxies.ProxyObject</a></strong>:
+      <em class="summary">A proxy to the remote Object.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.connection.SignalMatch-class.html">dbus.connection.SignalMatch</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.types.UnixFd-class.html">dbus.types.UnixFd</a></strong>:
+      <em class="summary">An Unix Fd.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus._expat_introspect_parser._Parser-class.html" onclick="show_private();">dbus._expat_introspect_parser._Parser</a></strong>
+    </li>
+    <li> <strong class="uidlink">_dbus_bindings._Server</strong>:
+      <em class="summary">A D-Bus server.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.server.Server-class.html">dbus.server.Server</a></strong>:
+      <em class="summary">An opaque object representing a server that listens for connections from
+other applications.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.service._VariantSignature-class.html" onclick="show_private();">dbus.service._VariantSignature</a></strong>:
+      <em class="summary">A fake method signature which, when iterated, yields an endless stream
+of 'v' characters representing variants (handy with zip()).</em>
+    </li>
+    <li> <strong class="uidlink">basestring</strong>:
+      <em class="summary">Type basestring cannot be instantiated; it is the base for str and unicode.</em>
+    <ul>
+    <li> <strong class="uidlink">str</strong>:
+      <em class="summary">str(object) -&gt; string</em>
+    <ul>
+    <li> <strong class="uidlink">_dbus_bindings._StrBase</strong>:
+      <em class="summary">Base class for str subclasses with a <tt class="rst-docutils literal">variant_level</tt> attribute.
+Do not rely on the existence of this class outside dbus-python.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.ByteArray-class.html">dbus.ByteArray</a></strong>:
+      <em class="summary">ByteArray is a subtype of str which can be used when you want an
+efficient immutable representation of a D-Bus byte array (signature 'ay').</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.ObjectPath-class.html">dbus.ObjectPath</a></strong>:
+      <em class="summary">A D-Bus object path, such as '/com/example/MyApp/Documents/abc'.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.Signature-class.html">dbus.Signature</a></strong>:
+      <em class="summary">A string subclass whose values are restricted to valid D-Bus
+signatures. When iterated over, instead of individual characters it
+produces Signature instances representing single complete types.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.UTF8String-class.html">dbus.UTF8String</a></strong>:
+      <em class="summary">A string represented using UTF-8 - a subtype of <code class="link">str</code>.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">unicode</strong>:
+      <em class="summary">unicode(string [, encoding[, errors]]) -&gt; object</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.String-class.html">dbus.String</a></strong>:
+      <em class="summary">A string represented using Unicode - a subtype of <code class="link">unicode</code>.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">dict</strong>:
+      <em class="summary">dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+    (key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+    d = {}
+    for k, v in iterable:
+        d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+    in the keyword argument list.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Dictionary-class.html">dbus.Dictionary</a></strong>:
+      <em class="summary">An mapping whose keys are similar and whose values are similar,
+implemented as a subtype of dict.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">float</strong>:
+      <em class="summary">float(x) -&gt; floating point number</em>
+    <ul>
+    <li> <strong class="uidlink">_dbus_bindings._FloatBase</strong>:
+      <em class="summary">Base class for float subclasses with a <tt class="rst-docutils literal">variant_level</tt> attribute.
+Do not rely on the existence of this class outside dbus-python.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Double-class.html">dbus.Double</a></strong>:
+      <em class="summary">A double-precision floating point number (a subtype of float).</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">int</strong>:
+      <em class="summary">int(x[, base]) -&gt; integer</em>
+    <ul>
+    <li> <strong class="uidlink">_dbus_bindings._IntBase</strong>:
+      <em class="summary">Base class for int subclasses with a <tt class="rst-docutils literal">variant_level</tt> attribute.
+Do not rely on the existence of this class outside dbus-python.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Boolean-class.html">dbus.Boolean</a></strong>:
+      <em class="summary">A boolean, represented as a subtype of <code class="link">int</code> (not <code class="link">bool</code>, because <code class="link">bool</code>
+cannot be subclassed).</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.Byte-class.html">dbus.Byte</a></strong>:
+      <em class="summary">An unsigned byte: a subtype of int, with range restricted to [0, 255].</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.Int16-class.html">dbus.Int16</a></strong>:
+      <em class="summary">A signed 16-bit integer between -0x8000 and +0x7FFF, represented as
+a subtype of <code class="link">int</code>.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.Int32-class.html">dbus.Int32</a></strong>:
+      <em class="summary">A signed 32-bit integer between -0x8000 0000 and +0x7FFF FFFF, represented as
+a subtype of <code class="link">int</code>.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.UInt16-class.html">dbus.UInt16</a></strong>:
+      <em class="summary">An unsigned 16-bit integer between 0 and 0xFFFF, represented as
+a subtype of <code class="link">int</code>.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">list</strong>:
+      <em class="summary">list() -&gt; new empty list
+list(iterable) -&gt; new list initialized from iterable's items</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Array-class.html">dbus.Array</a></strong>:
+      <em class="summary">An array of similar items, implemented as a subtype of list.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">long</strong>:
+      <em class="summary">long(x[, base]) -&gt; integer</em>
+    <ul>
+    <li> <strong class="uidlink">_dbus_bindings._LongBase</strong>:
+      <em class="summary">Base class for <tt class="rst-docutils literal">long</tt> subclasses with a <tt class="rst-docutils literal">variant_level</tt> attribute.
+Do not rely on the existence of this class outside dbus-python.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Int64-class.html">dbus.Int64</a></strong>:
+      <em class="summary">A signed 64-bit integer between -0x8000 0000 0000 0000 and
++0x7FFF FFFF FFFF FFFF, represented as a subtype of <code class="link">long</code>.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.UInt32-class.html">dbus.UInt32</a></strong>:
+      <em class="summary">An unsigned 32-bit integer between 0 and 0xFFFF FFFF, represented as a
+subtype of <code class="link">long</code>.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.UInt64-class.html">dbus.UInt64</a></strong>:
+      <em class="summary">An unsigned 64-bit integer between 0 and 0xFFFF FFFF FFFF FFFF,
+represented as a subtype of <code class="link">long</code>.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">tuple</strong>:
+      <em class="summary">tuple() -&gt; empty tuple
+tuple(iterable) -&gt; tuple initialized from iterable's items</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.Struct-class.html">dbus.Struct</a></strong>:
+      <em class="summary">An structure containing items of possibly distinct types.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">type</strong>:
+      <em class="summary">type(object) -&gt; the object's type
+type(name, bases, dict) -&gt; a new type</em>
+    <ul>
+    <li> <strong class="uidlink">gi._gobject.GObjectMeta</strong>:
+      <em class="summary">Metaclass for automatically registering GObject classes</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.gobject_service.ExportedGObjectType-class.html" onclick="show_private();">dbus.gobject_service.ExportedGObjectType</a></strong>:
+      <em class="summary">A metaclass which inherits from both GObjectMeta and
+<a href="dbus.service.InterfaceType-class.html" class="link" onclick="show_private();">dbus.service.InterfaceType</a>. Used as the metaclass for <a href="dbus.gobject_service.ExportedGObject-class.html" class="link">ExportedGObject</a>.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="dbus.service.InterfaceType-class.html" onclick="show_private();">dbus.service.InterfaceType</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.gobject_service.ExportedGObjectType-class.html" onclick="show_private();">dbus.gobject_service.ExportedGObjectType</a></strong>:
+      <em class="summary">A metaclass which inherits from both GObjectMeta and
+<a href="dbus.service.InterfaceType-class.html" class="link" onclick="show_private();">dbus.service.InterfaceType</a>. Used as the metaclass for <a href="dbus.gobject_service.ExportedGObject-class.html" class="link">ExportedGObject</a>.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Feb  1 10:06:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

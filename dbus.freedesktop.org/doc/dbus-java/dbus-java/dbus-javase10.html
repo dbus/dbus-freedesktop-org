@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>CreateInterface</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 830--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase9.html" >prev</a>] [<a 
+href="dbus-javase9.html#taildbus-javase9.html" >prev-tail</a>] [<a 
+href="#taildbus-javase10.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">10   </span> <a 
+ id="x32-3500010"></a>CreateInterface</h3>
+<!--l. 833--><p class="noindent" >D-Bus provides a method to get introspection data on a remote object, which describes
+the interfaces, methods and signals it provides. This introspection data is in XML
+format<span class="footnote-mark"><a 
+href="dbus-java33.html#fn19x0"><sup class="textsuperscript">19</sup></a></span><a 
+ id="x32-35001f19"></a> .
+The library automatically provides XML introspection data on all objects which are
+exported by it. Introspection data can be used to create Java interface definitions
+automatically.
+</p><!--l. 841--><p class="indent" >   The <span 
+class="cmtt-12">CreateInterface</span><span class="footnote-mark"><a 
+href="dbus-java34.html#fn20x0"><sup class="textsuperscript">20</sup></a></span><a 
+ id="x32-35002f20"></a> 
+class will automatically create Java source files from an XML file containing the introspection
+data, or by querying the remote object over D-Bus. CreateInterface can be called from Java
+code, or can be run as a stand alone program.
+</p><!--l. 848--><p class="indent" >   The syntax for the CreateInterface program is
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+CreateInterface&#x00A0;[--system]&#x00A0;[--session]&#x00A0;[--create-files]
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x003C;bus&#x00A0;name&#x003E;&#x00A0;&#x003C;object&#x003E;
+&#x00A0;<br />CreateInterface&#x00A0;[--create-files]&#x00A0;&#x003C;introspection-file.xml&#x003E;
+</div>
+<!--l. 854--><p class="nopar" >
+</p><!--l. 856--><p class="indent" >   The Java source code interfaces will be written to the standard ouput. If the
+<span 
+class="cmtt-12">--create-files </span>option is specified the correct files in the correct directory structure will be
+created.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">10.1   </span> <a 
+ id="x32-3600010.1"></a>Nested Interfaces</h4>
+<!--l. 862--><p class="noindent" >In some cases there are nested interfaces. In this case CreateInterface will not correctly create
+the Java equivalent. This is because Java cannot have both a class and a package
+with the same name. The solution to this is to create nested classes in the same
+file.
+</p><!--l. 867--><p class="indent" >   An example would be the Hal interface:
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+&#x003C;interface&#x00A0;name="org.freedesktop.Hal.Device"&#x003E;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...
+&#x00A0;<br />&#x003C;/interface&#x003E;
+&#x00A0;<br />&#x003C;interface&#x00A0;name="org.freedesktop.Hal.Device.Volume"&#x003E;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...
+&#x00A0;<br />&#x003C;/interface&#x003E;
+</div>
+<!--l. 876--><p class="nopar" >
+</p><!--l. 878--><p class="indent" >   When converted to Java you would just have one file <span 
+class="cmtt-12">org/freedesktop/Hal/Device.java</span>
+in the package <span 
+class="cmtt-12">org.freedesktop.Hal</span>, which would contain one class and one nested
+class:
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+public&#x00A0;interface&#x00A0;Device&#x00A0;extends&#x00A0;DBusInterface&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;interface&#x00A0;Volume&#x00A0;extends&#x00A0;DBusInterface&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;...&#x00A0;methods&#x00A0;in&#x00A0;Volume&#x00A0;...
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...&#x00A0;methods&#x00A0;in&#x00A0;Device&#x00A0;...
+&#x00A0;<br />}
+</div>
+<!--l. 889--><p class="nopar" >
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 891--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase9.html" >prev</a>] [<a 
+href="dbus-javase9.html#taildbus-javase9.html" >prev-tail</a>] [<a 
+href="dbus-javase10.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 891--><p class="indent" >   <a 
+ id="taildbus-javase10.html"></a>  </p> 
+</body></html> 

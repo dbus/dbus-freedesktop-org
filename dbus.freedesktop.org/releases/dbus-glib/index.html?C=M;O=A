@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /releases/dbus-glib</title>
+ </head>
+ <body>
+<h1>Index of /releases/dbus-glib</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=D">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/releases/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.70.tar.gz">dbus-glib-0.70.tar.gz</a></td><td align="right">17-Jul-2006 14:05  </td><td align="right">555K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.71.tar.gz">dbus-glib-0.71.tar.gz</a></td><td align="right">24-Jul-2006 11:49  </td><td align="right">554K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.72.tar.gz">dbus-glib-0.72.tar.gz</a></td><td align="right">26-Oct-2006 02:32  </td><td align="right">622K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.73.tar.gz">dbus-glib-0.73.tar.gz</a></td><td align="right">13-Feb-2007 06:41  </td><td align="right">629K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.74.tar.gz">dbus-glib-0.74.tar.gz</a></td><td align="right">27-Jun-2007 04:04  </td><td align="right">640K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.76.tar.gz">dbus-glib-0.76.tar.gz</a></td><td align="right">05-Jun-2008 12:37  </td><td align="right">652K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.78.tar.gz">dbus-glib-0.78.tar.gz</a></td><td align="right">04-Dec-2008 13:04  </td><td align="right">667K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.80.tar.gz">dbus-glib-0.80.tar.gz</a></td><td align="right">02-Feb-2009 16:40  </td><td align="right">673K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.82.tar.gz">dbus-glib-0.82.tar.gz</a></td><td align="right">16-Jul-2009 11:15  </td><td align="right">659K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.84.tar.gz">dbus-glib-0.84.tar.gz</a></td><td align="right">27-Jan-2010 12:48  </td><td align="right">663K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.86.tar.gz">dbus-glib-0.86.tar.gz</a></td><td align="right">24-Mar-2010 17:27  </td><td align="right">678K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.88.tar.gz">dbus-glib-0.88.tar.gz</a></td><td align="right">12-Aug-2010 07:55  </td><td align="right">672K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.90.tar.gz">dbus-glib-0.90.tar.gz</a></td><td align="right">07-Nov-2010 21:19  </td><td align="right">674K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.90.tar.gz.asc">dbus-glib-0.90.tar.gz.asc</a></td><td align="right">07-Nov-2010 21:19  </td><td align="right">198 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.92.tar.gz">dbus-glib-0.92.tar.gz</a></td><td align="right">10-Nov-2010 02:28  </td><td align="right">671K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.92.tar.gz.asc">dbus-glib-0.92.tar.gz.asc</a></td><td align="right">10-Nov-2010 02:28  </td><td align="right">198 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.94.tar.gz">dbus-glib-0.94.tar.gz</a></td><td align="right">01-Jun-2011 11:14  </td><td align="right">689K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.94.tar.gz.asc">dbus-glib-0.94.tar.gz.asc</a></td><td align="right">01-Jun-2011 11:14  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.96.tar.gz">dbus-glib-0.96.tar.gz</a></td><td align="right">21-Sep-2011 10:13  </td><td align="right">670K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.96.tar.gz.asc">dbus-glib-0.96.tar.gz.asc</a></td><td align="right">21-Sep-2011 10:13  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.98.tar.gz">dbus-glib-0.98.tar.gz</a></td><td align="right">30-Sep-2011 08:16  </td><td align="right">707K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.98.tar.gz.asc">dbus-glib-0.98.tar.gz.asc</a></td><td align="right">30-Sep-2011 08:16  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.100.tar.gz">dbus-glib-0.100.tar.gz</a></td><td align="right">25-Jun-2012 13:28  </td><td align="right">714K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.100.tar.gz.asc">dbus-glib-0.100.tar.gz.asc</a></td><td align="right">25-Jun-2012 13:28  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.100.1.tar.gz">dbus-glib-0.100.1.tar.gz</a></td><td align="right">15-Feb-2013 09:28  </td><td align="right">714K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.100.1.tar.gz.asc">dbus-glib-0.100.1.tar.gz.asc</a></td><td align="right">15-Feb-2013 09:28  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.100.2.tar.gz">dbus-glib-0.100.2.tar.gz</a></td><td align="right">25-Feb-2013 04:50  </td><td align="right">731K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.100.2.tar.gz.asc">dbus-glib-0.100.2.tar.gz.asc</a></td><td align="right">25-Feb-2013 04:50  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.102.tar.gz">dbus-glib-0.102.tar.gz</a></td><td align="right">12-Feb-2014 07:35  </td><td align="right">765K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-glib-0.102.tar.gz.asc">dbus-glib-0.102.tar.gz.asc</a></td><td align="right">12-Feb-2014 07:35  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.22 (Debian) Server at dbus.freedesktop.org Port 80</address>
+</body></html>

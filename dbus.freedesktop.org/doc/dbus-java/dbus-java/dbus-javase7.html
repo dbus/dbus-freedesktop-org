@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>D-Bus Types</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 470--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase6.html" >prev</a>] [<a 
+href="dbus-javase6.html#taildbus-javase6.html" >prev-tail</a>] [<a 
+href="#taildbus-javase7.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x24-200007"></a>D-Bus Types</h3>
+<!--l. 472--><p class="noindent" >D-Bus supports a number of types in its messages, some which Java supports natively, and
+some which it doesn&#8217;t. This library provides a way of modelling the extra D-Bus
+Types in Java. The full list of types and what D-Bus type they map to is in table
+<a 
+href="#x24-310011">1<!--tex4ht:ref: table:types --></a>.
+</p><!--l. 477--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.1   </span> <a 
+ id="x24-210007.1"></a>Basic Types</h4>
+<!--l. 479--><p class="noindent" >All of Java&#8217;s basic types are supported as parameters and return types to methods, and
+as parameters to signals. These can be used in either their primitive or wrapper
+types.
+</p><!--l. 481--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.1.1   </span> <a 
+ id="x24-220007.1.1"></a>Unsigned Types</h5>
+<!--l. 483--><p class="noindent" >D-Bus, like C and similar languages, has a notion of unsigned numeric types. The library supplies
+<span 
+class="cmtt-12">UInt16</span><span class="footnote-mark"><a 
+href="dbus-java25.html#fn14x0"><sup class="textsuperscript">14</sup></a></span><a 
+ id="x24-22001f14"></a> ,
+<span 
+class="cmtt-12">UInt32 </span>and <span 
+class="cmtt-12">UInt64 </span>classes to represent these new basic types.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.2   </span> <a 
+ id="x24-230007.2"></a>Strings</h4>
+<!--l. 490--><p class="noindent" >D-Bus also supports sending Strings. When mentioned below, Strings count as a basic
+type.
+</p><!--l. 493--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.2.1   </span> <a 
+ id="x24-240007.2.1"></a>String Comparisons</h5>
+<!--l. 495--><p class="noindent" >There may be some problems with comparing strings received over D-Bus with strings
+generated locally when using the String.equals method. This is due to how the Strings are
+generated from a UTF8 encoding. The recommended way to compare strings which have been
+sent over D-Bus is with the <span 
+class="cmtt-12">java.text.Collator </span>class. Figure <a 
+href="#x24-2400110">10<!--tex4ht:ref: fig:collator --></a> demonstrates its
+                                                                                      
+                                                                                      
+use.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x24-2400110"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 502--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+String&#x00A0;rname&#x00A0;=&#x00A0;remote.getName();
+&#x00A0;<br />Collator&#x00A0;col&#x00A0;=&#x00A0;Collator.getInstance();
+&#x00A0;<br />col.setDecomposition(Collator.FULL_DECOMPOSITION);
+&#x00A0;<br />col.setStrength(Collator.PRIMARY);
+&#x00A0;<br />if&#x00A0;(0&#x00A0;!=&#x00A0;col.compare("Name",&#x00A0;rname))
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;fail("getName&#x00A0;return&#x00A0;value&#x00A0;incorrect");
+</div>
+<!--l. 510--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;10: </td><td  
+class="content">Comparing strings with <span 
+class="cmtt-12">java.text.Collator</span>.</td></tr></table><!--tex4ht:label?: x24-2400110 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">7.3   </span> <a 
+ id="x24-250007.3"></a>Arrays</h4>
+<!--l. 518--><p class="noindent" >You can send arrays of any valid D-Bus Type over D-Bus. These can either be declared in Java
+as arrays (e.g. <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">Integer[]</span></span></span> or <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">int[]</span></span></span>) or as Lists (e.g. <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">List&#x003C;String&#x003E;</span></span></span>). All lists <span 
+class="cmbx-12">must </span>be
+parameterised with their type in the source (reflection on this is used by the library to
+determine their type). Also note that arrays cannot be used as part of more complex type, only
+Lists (for example <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">List&#x003C;List&#x003C;String&#x003E;&#x003E;</span></span></span>).
+</p><!--l. 525--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.4   </span> <a 
+ id="x24-260007.4"></a>Maps</h4>
+<!--l. 527--><p class="noindent" >D-Bus supports a dictionary type analogous to the Java Map type. This has the additional
+restriction that only basic types can be used as the key (including String). Any valid
+D-Bus type can be the value. As with lists, maps must be fully parameterised. (e.g.
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">Map&#x003C;Integer,</span><span 
+class="cmtt-12">&#x00A0;String&#x003E;</span></span></span>).
+</p><!--l. 533--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.5   </span> <a 
+ id="x24-270007.5"></a>Variants</h4>
+<!--l. 535--><p class="noindent" >D-Bus has support for a Variant type. This is similar to declaring that a method takes a parameter of
+type <span 
+class="cmtt-12">Object</span>, in that a Variant may contain any other type. Variants can either be declared using the
+<span 
+class="cmtt-12">Variant</span><span class="footnote-mark"><a 
+href="dbus-java26.html#fn15x0"><sup class="textsuperscript">15</sup></a></span><a 
+ id="x24-27001f15"></a> 
+class, or as a Type Variable. In the latter case the value is automatically unwrapped and passed
+to the function. Variants in compound types (Arrays, Maps, etc) must be declared using
+the Variant class with the full type passed to the Variant constructor and manually
+unwrapped.
+</p><!--l. 544--><p class="indent" >   Both these methods use variants:
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+public&#x00A0;void&#x00A0;display(Variant&#x00A0;v);
+&#x00A0;<br />public&#x00A0;&#x003C;T&#x003E;&#x00A0;int&#x00A0;hash(T&#x00A0;v);
+</div>
+<!--l. 549--><p class="nopar" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.6   </span> <a 
+ id="x24-280007.6"></a>Structs</h4>
+<!--l. 553--><p class="noindent" >D-Bus has a struct type, which is a collection of other types. Java does
+not have an analogue of this other than fields in classes, and due to the
+limitation of Java reflection this is not sufficient. The library declares a
+<span 
+class="cmtt-12">Struct</span><span class="footnote-mark"><a 
+href="dbus-java27.html#fn16x0"><sup class="textsuperscript">16</sup></a></span><a 
+ id="x24-28001f16"></a> 
+class which can be used to create structs. To define a struct you extend the <span 
+class="cmtt-12">Struct </span>class and
+define fields for each member of the struct. These fields then need to be annotated in the order
+which they appear in the struct (class fields do not have a defined order). You must also define
+a single constructor which takes the contents of he struct in order. This is best demonstrated
+by an example. Figure&#x00A0;<a 
+href="#x24-2800211">11<!--tex4ht:ref: fig:struct --></a> shows a Struct definition, and figure&#x00A0;<a 
+href="#x24-2800312">12<!--tex4ht:ref: fig:structmethod --></a> shows this being used as a
+parameter to a method.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x24-2800211"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 565--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;org.freedesktop.dbus.test;
+&#x00A0;<br />
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusException;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.Position;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.Struct;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;final&#x00A0;class&#x00A0;TestStruct&#x00A0;extends&#x00A0;Struct
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@Position(0)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;String&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@Position(1)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;int&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@Position(2)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;String&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Struct3(String&#x00A0;a,&#x00A0;int&#x00A0;b,&#x00A0;String&#x00A0;c)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.a&#x00A0;=&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.b&#x00A0;=&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.c&#x00A0;=&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 588--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;11: </td><td  
+class="content">A Struct with three elements</td></tr></table><!--tex4ht:label?: x24-2800211 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x24-2800312"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 595--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+public&#x00A0;void&#x00A0;do(TestStruct&#x00A0;data);
+</div>
+<!--l. 598--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;12: </td><td  
+class="content">A struct as a parameter to a method</td></tr></table><!--tex4ht:label?: x24-2800312 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 605--><p class="indent" >   Section&#x00A0;<a 
+href="dbus-javase10.html#x32-3500010">10<!--tex4ht:ref: sec:create --></a> describes how these can be automatically generated from D-Bus introspection
+data.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.7   </span> <a 
+ id="x24-290007.7"></a>Objects</h4>
+<!--l. 610--><p class="noindent" >You can pass references to exportable objects round using their object paths. To do
+this in Java you declare a type of <span 
+class="cmtt-12">DBusInterface</span>. When the library receive- an
+object path it will automatically convert it into the object you are exporting with
+that object path. You can pass remote objects back to their processes in a similar
+fashion.
+</p><!--l. 616--><p class="indent" >   Using a parameter of type <span 
+class="cmtt-12">DBusInterface </span>can cause the automatic creation of a proxy
+object using introspection. If the remote app does not support introspection, or the object does
+not exist at the time you receive the message then this will fail. In that case the parameter can
+be declared to be of type <span 
+class="cmtt-12">Path</span>. In this case no automatic creation will be performed and you
+can get the path as a string with either the <span 
+class="cmtt-12">getPath </span>or <span 
+class="cmtt-12">toString </span>methods on the <span 
+class="cmtt-12">Path</span>
+object.
+</p><!--l. 625--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">7.8   </span> <a 
+ id="x24-300007.8"></a>Multiple Return Values</h4>
+<!--l. 627--><p class="noindent" >D-Bus also allows functions to return multiple values, a concept not supported
+by Java. This has been solved in a fashion similar to the struct, using a
+<span 
+class="cmtt-12">Tuple</span><span class="footnote-mark"><a 
+href="dbus-java28.html#fn17x0"><sup class="textsuperscript">17</sup></a></span><a 
+ id="x24-30001f17"></a> 
+class. Tuples are defined as generic tuples which can be parameterised for different types and
+just need to be defined of the appropriate length. This can be seen in figure&#x00A0;<a 
+href="#x24-3000213">13<!--tex4ht:ref: fig:tuple --></a> and a
+call in figure&#x00A0;<a 
+href="#x24-3000314">14<!--tex4ht:ref: fig:tuplemethod --></a>. Again, these can be automatically generated from introspection
+data.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x24-3000213"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 636--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+import&#x00A0;org.freedesktop.dbus.Tuple;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;final&#x00A0;class&#x00A0;TestTuple&#x003C;A,&#x00A0;B,&#x00A0;C&#x003E;&#x00A0;extends&#x00A0;Tuple
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;A&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;B&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;C&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;TestTuple(A&#x00A0;a,&#x00A0;B&#x00A0;b,&#x00A0;C&#x00A0;c)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.a&#x00A0;=&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.b&#x00A0;=&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.c&#x00A0;=&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 652--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;13: </td><td  
+class="content">A 3-tuple</td></tr></table><!--tex4ht:label?: x24-3000213 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x24-3000314"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 659--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+public&#x00A0;ThreeTuple&#x003C;String,&#x00A0;Integer,&#x00A0;Boolean&#x003E;&#x00A0;status(int&#x00A0;item);
+</div>
+<!--l. 662--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;14: </td><td  
+class="content">A Tuple being returned from a method</td></tr></table><!--tex4ht:label?: x24-3000314 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">7.9   </span> <a 
+ id="x24-310007.9"></a>Full list of types</h4>
+<!--l. 670--><p class="noindent" >Table <a 
+href="#x24-310011">1<!--tex4ht:ref: table:types --></a> contains a full list of all the Java types and their corresponding D-Bus types.
+</p>
+   <div class="table">
+                                                                                      
+                                                                                      
+<!--l. 673--><p class="indent" >   <a 
+ id="x24-310011"></a></p><hr class="float" /><div class="float" 
+><table class="float"><tr class="float"><td class="float" 
+>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 673--><p class="noindent" >
+</p>
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1" /></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"><span 
+class="cmbx-12">Java Type              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11"><span 
+class="cmbx-12">D-Bus Type                     </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">Byte                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11">DBUS_TYPE_BYTE              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">byte                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11">DBUS_TYPE_BYTE              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">Boolean                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11">DBUS_TYPE_BOOLEAN       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11">boolean                      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11">DBUS_TYPE_BOOLEAN       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11">Short                         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11">DBUS_TYPE_INT16              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11">short                         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-2"  
+class="td11">DBUS_TYPE_INT16              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11">UInt16                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-2"  
+class="td11">DBUS_TYPE_UINT16           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td11">int                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-2"  
+class="td11">DBUS_TYPE_INT32              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-1"  
+class="td11">Integer                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-2"  
+class="td11">DBUS_TYPE_INT32              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-1"  
+class="td11">UInt32                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-2"  
+class="td11">DBUS_TYPE_UINT32           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-12-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-1"  
+class="td11">long                           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-2"  
+class="td11">DBUS_TYPE_INT64              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-13-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-1"  
+class="td11">Long                         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-2"  
+class="td11">DBUS_TYPE_INT64              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-1"  
+class="td11">UInt64                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-2"  
+class="td11">DBUS_TYPE_UINT64           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-15-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-15-1"  
+class="td11">double                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-15-2"  
+class="td11">DBUS_TYPE_DOUBLE         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-16-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-16-1"  
+class="td11">Double                       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-16-2"  
+class="td11">DBUS_TYPE_DOUBLE         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-17-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-17-1"  
+class="td11">String                        </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-17-2"  
+class="td11">DBUS_TYPE_STRING          </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-18-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-18-1"  
+class="td11">Path                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-18-2"  
+class="td11">DBUS_TYPE_OBJECT_PATH</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-19-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-19-1"  
+class="td11"><span 
+class="cmmi-12">&#x003C;</span>T<span 
+class="cmmi-12">&#x003E;                     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-19-2"  
+class="td11">DBUS_TYPE_VARIANT        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-20-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-20-1"  
+class="td11">Variant                      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-20-2"  
+class="td11">DBUS_TYPE_VARIANT        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-21-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-21-1"  
+class="td11">? extends Struct           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-21-2"  
+class="td11">DBUS_TYPE_STRUCT          </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-22-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-22-1"  
+class="td11">?[&#x00A0;]                           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-22-2"  
+class="td11">DBUS_TYPE_ARRAY           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-23-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-23-1"  
+class="td11">? extends List              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-23-2"  
+class="td11">DBUS_TYPE_ARRAY           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-24-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-24-1"  
+class="td11">? extends Map             </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-24-2"  
+class="td11">DBUS_TYPE_DICT              </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-25-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-25-1"  
+class="td11">? extends DBusInterface</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-25-2"  
+class="td11">DBUS_TYPE_OBJECT_PATH</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-26-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-26-1"  
+class="td11">Type[&#x00A0;]                      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-26-2"  
+class="td11">DBUS_TYPE_SIGNATURE    </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-27-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-27-1"  
+class="td11">                    </td>
+</tr></table></div></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Table&#x00A0;1: </td><td  
+class="content">Mapping between Java types and D-Bus types</td></tr></table><!--tex4ht:label?: x24-310011 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfloat" />
+   </div>
+   <h5 class="subsubsectionHead"><span class="titlemark">7.9.1   </span> <a 
+ id="x24-320007.9.1"></a>float</h5>
+<!--l. 710--><p class="noindent" >Currently the D-Bus reference implementation does not support a native single-precision
+floating point type. Along with the C# implementation of the protocol, the Java
+implementation supports this extension to the protocol. By default, however, the library
+operates in compatibility mode and converts all floats to the double type. To disable
+compatibility mode export the environment variable <span 
+class="cmtt-12">DBUS</span><span 
+class="cmtt-12">_JAVA</span><span 
+class="cmtt-12">_FLOATS=true</span>.
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 717--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase6.html" >prev</a>] [<a 
+href="dbus-javase6.html#taildbus-javase6.html" >prev-tail</a>] [<a 
+href="dbus-javase7.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 717--><p class="indent" >   <a 
+ id="taildbus-javase7.html"></a>   </p> 
+</body></html> 

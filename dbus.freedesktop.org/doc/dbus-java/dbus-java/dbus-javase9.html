@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>DBusSerializable</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 760--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase8.html" >prev</a>] [<a 
+href="dbus-javase8.html#taildbus-javase8.html" >prev-tail</a>] [<a 
+href="dbus-javase3.html#taildbus-javase9.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
+ id="x30-340009"></a>DBusSerializable</h3>
+<!--l. 762--><p class="noindent" >Some people may want to be able to pass their own objects over D-Bus. Obviously only raw
+D-Bus types can be sent on the message bus itself, but the Java implementation allows the
+creation of serializable objects which can be passed to D-Bus functions and will be converted
+to/from D-Bus types by the library.
+</p><!--l. 767--><p class="indent" >   To create such a class you must implement the
+<span 
+class="cmtt-12">DBusSerializable</span><span class="footnote-mark"><a 
+href="dbus-java31.html#fn18x0"><sup class="textsuperscript">18</sup></a></span><a 
+ id="x30-34001f18"></a> 
+class and provide two methods and a zero-argument constructor. The first method has the
+signature <span 
+class="cmtt-12">public Object</span>
+</p>
+   <center class="math-display" >
+<img 
+src="dbus-java0x.png" alt="
+" class="math-display"  /></center>
+<!--l. 770--><p class="nopar" > <span 
+class="cmtt-12">serialize() throws DBusException </span>and the second must be called <span 
+class="cmtt-12">deserialize</span>, return
+<span 
+class="cmtt-12">null </span>and take as it&#8217;s arguments exactly all the dbus types that are being serialized to <span 
+class="cmti-12">in order</span>
+and <span 
+class="cmti-12">with parameterization</span>. The serialize method should return the class properties you wish to
+serialize, correctly formatted for the wire (<span 
+class="cmtt-12">DBusConnection.convertParameters() </span>can help
+with this), in order in an Object array.
+</p><!--l. 778--><p class="indent" >   An example of a serializable class can be seen in figure&#x00A0;<a 
+href="#x30-3400216">16<!--tex4ht:ref: fig:serializable --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x30-3400216"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 782--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+import&#x00A0;java.lang.reflect.Type;
+&#x00A0;<br />
+&#x00A0;<br />import&#x00A0;java.util.List;
+&#x00A0;<br />import&#x00A0;java.util.Vector;
+&#x00A0;<br />
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusConnection;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSerializable;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;class&#x00A0;TestSerializable&#x00A0;implements&#x00A0;DBusSerializable
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;private&#x00A0;int&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;private&#x00A0;String&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;private&#x00A0;Vector&#x003C;Integer&#x003E;&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;TestSerializable(int&#x00A0;a,&#x00A0;String&#x00A0;b,&#x00A0;Vector&#x003C;Integer&#x003E;&#x00A0;c)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.a&#x00A0;=&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.b&#x00A0;=&#x00A0;b.toString();
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.c&#x00A0;=&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;TestSerializable()&#x00A0;{}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;void&#x00A0;deserialize(int&#x00A0;a,&#x00A0;String&#x00A0;b,&#x00A0;List&#x003C;Integer&#x003E;&#x00A0;c)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.a&#x00A0;=&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.b&#x00A0;=&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.c&#x00A0;=&#x00A0;new&#x00A0;Vector&#x003C;Integer&#x003E;(c);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Object[]&#x00A0;serialize()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;new&#x00A0;Object[]&#x00A0;{&#x00A0;a,&#x00A0;b,&#x00A0;c&#x00A0;};
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;int&#x00A0;getInt()&#x00A0;{&#x00A0;return&#x00A0;a;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;String&#x00A0;getString()&#x00A0;{&#x00A0;return&#x00A0;b;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Vector&#x003C;Integer&#x003E;&#x00A0;getVector()&#x00A0;{&#x00A0;return&#x00A0;c;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;String&#x00A0;toString()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;"TestSerializable{"+a+","+b+","+c+"}";
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 822--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;16: </td><td  
+class="content">A serializable class</td></tr></table><!--tex4ht:label?: x30-3400216 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+                                                                                      
+                                                                                      
+   <!--l. 830--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase8.html" >prev</a>] [<a 
+href="dbus-javase8.html#taildbus-javase8.html" >prev-tail</a>] [<a 
+href="dbus-javase9.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 830--><p class="indent" >   <a 
+ id="taildbus-javase9.html"></a> </p> 
+</body></html> 

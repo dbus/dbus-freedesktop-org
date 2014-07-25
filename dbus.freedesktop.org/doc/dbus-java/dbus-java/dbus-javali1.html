@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Contents</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 44--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javali2.html" >next</a>] [<a 
+href="#taildbus-javali1.html">tail</a>] [<a 
+href="dbus-java.html#dbus-javali1.html" >up</a>] </p></div>
+   <h3 class="likesectionHead"><a 
+ id="x2-1000"></a>Contents</h3>
+   <div class="tableofcontents">
+   <span class="sectionToc" >1 <a 
+href="dbus-javase1.html#x5-40001">Introduction</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
+href="dbus-javase1.html#x5-50001.1">Protocol Implementation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.2 <a 
+href="dbus-javase1.html#x5-60001.2">Dependencies</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.3 <a 
+href="dbus-javase1.html#x5-70001.3">D-Bus Terminology</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >1.3.1 <a 
+href="dbus-javase1.html#x5-80001.3.1" id="QQ2-5-8">Bus Names</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >1.3.2 <a 
+href="dbus-javase1.html#x5-90001.3.2" id="QQ2-5-9">Interfaces</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >1.3.3 <a 
+href="dbus-javase1.html#x5-100001.3.3" id="QQ2-5-10">Object Paths</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >1.3.4 <a 
+href="dbus-javase1.html#x5-110001.3.4" id="QQ2-5-11">Member Names</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >1.3.5 <a 
+href="dbus-javase1.html#x5-120001.3.5" id="QQ2-5-12">Errors</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="dbus-javase2.html#x9-130002">DBusConnection</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="dbus-javase2.html#x9-140002.1">Asynchronous Calls</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="dbus-javase3.html#x13-150003">DBusInterface</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="dbus-javase3.html#x13-160003.1">Interface name overriding</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="dbus-javase4.html#x17-170004">DBusSignal</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="dbus-javase5.html#x20-180005">DBusExecutionException</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="dbus-javase6.html#x22-190006">DBusSigHandler</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="dbus-javase7.html#x24-200007">D-Bus Types</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.1 <a 
+href="dbus-javase7.html#x24-210007.1">Basic Types</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.1.1 <a 
+href="dbus-javase7.html#x24-220007.1.1" id="QQ2-24-31">Unsigned Types</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
+href="dbus-javase7.html#x24-230007.2">Strings</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.2.1 <a 
+href="dbus-javase7.html#x24-240007.2.1" id="QQ2-24-33">String Comparisons</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
+href="dbus-javase7.html#x24-250007.3">Arrays</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
+href="dbus-javase7.html#x24-260007.4">Maps</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
+href="dbus-javase7.html#x24-270007.5">Variants</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.6 <a 
+href="dbus-javase7.html#x24-280007.6">Structs</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.7 <a 
+href="dbus-javase7.html#x24-290007.7">Objects</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.8 <a 
+href="dbus-javase7.html#x24-300007.8">Multiple Return Values</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.9 <a 
+href="dbus-javase7.html#x24-310007.9">Full list of types</a></span>
+                                                                                      
+                                                                                      
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.9.1 <a 
+href="dbus-javase7.html#x24-320007.9.1" id="QQ2-24-47">float</a></span>
+<br />   <span class="sectionToc" >8 <a 
+href="dbus-javase8.html#x29-330008">Annotations</a></span>
+<br />   <span class="sectionToc" >9 <a 
+href="dbus-javase9.html#x30-340009">DBusSerializable</a></span>
+<br />   <span class="sectionToc" >10 <a 
+href="dbus-javase10.html#x32-3500010">CreateInterface</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >10.1 <a 
+href="dbus-javase10.html#x32-3600010.1">Nested Interfaces</a></span>
+<br />   <span class="sectionToc" >11 <a 
+href="dbus-javase11.html#x35-3700011">Debugging</a></span>
+<br />   <span class="sectionToc" >12 <a 
+href="dbus-javase12.html#x36-3800012">Peer to Peer</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.1 <a 
+href="dbus-javase12.html#x36-3900012.1">Connecting to another application</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.2 <a 
+href="dbus-javase12.html#x36-4000012.2">Getting Remote Objects</a></span>
+<br />   <span class="sectionToc" >13 <a 
+href="dbus-javase13.html#x38-4100013">Low-level API</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >13.1 <a 
+href="dbus-javase13.html#x38-4200013.1">Transport</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >13.2 <a 
+href="dbus-javase13.html#x38-4300013.2">Message</a></span>
+<br />   <span class="sectionToc" >14 <a 
+href="dbus-javase14.html#x41-4400014">Examples</a></span>
+<br />   <span class="sectionToc" >15 <a 
+href="dbus-javase15.html#x43-4500015">Credits</a></span>
+   </div>
+                                                                                      
+                                                                                      
+   <!--l. 45--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javali2.html" >next</a>] [<a 
+href="dbus-javali1.html" >front</a>] [<a 
+href="dbus-java.html#dbus-javali1.html" >up</a>] </p></div>
+<!--l. 45--><p class="indent" >   <a 
+ id="taildbus-javali1.html"></a> </p> 
+</body></html> 

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /releases</title>
+ </head>
+ <body>
+<h1>Index of /releases</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus/">dbus/</a></td><td align="right">02-Jul-2014 09:03  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-glib/">dbus-glib/</a></td><td align="right">12-Feb-2014 07:35  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-python/">dbus-python/</a></td><td align="right">08-May-2013 06:08  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-java/">dbus-java/</a></td><td align="right">06-Dec-2009 03:22  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.93.tar.gz">dbus-0.93.tar.gz</a></td><td align="right">13-Sep-2006 23:04  </td><td align="right">1.3M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.92.tar.gz">dbus-0.92.tar.gz</a></td><td align="right">18-Aug-2006 13:33  </td><td align="right">1.3M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.71.tar.gz">dbus-glib-0.71.tar.gz</a></td><td align="right">24-Jul-2006 11:49  </td><td align="right">554K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.71.tar.gz">dbus-python-0.71.tar.gz</a></td><td align="right">24-Jul-2006 11:36  </td><td align="right">134K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.91.tar.gz">dbus-0.91.tar.gz</a></td><td align="right">24-Jul-2006 10:50  </td><td align="right">1.3M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.70.tar.gz">dbus-python-0.70.tar.gz</a></td><td align="right">17-Jul-2006 14:05  </td><td align="right"> 75K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-glib-0.70.tar.gz">dbus-glib-0.70.tar.gz</a></td><td align="right">17-Jul-2006 14:05  </td><td align="right">555K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.90.tar.gz">dbus-0.90.tar.gz</a></td><td align="right">17-Jul-2006 14:05  </td><td align="right">1.3M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.62.tar.gz">dbus-0.62.tar.gz</a></td><td align="right">12-Jun-2006 07:22  </td><td align="right">1.7M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.61.tar.gz">dbus-0.61.tar.gz</a></td><td align="right">24-Feb-2006 10:22  </td><td align="right">1.7M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.60.tar.gz">dbus-0.60.tar.gz</a></td><td align="right">30-Nov-2005 16:16  </td><td align="right">1.6M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.50.tar.gz">dbus-0.50.tar.gz</a></td><td align="right">06-Sep-2005 16:47  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.36.2.tar.gz">dbus-0.36.2.tar.gz</a></td><td align="right">29-Aug-2005 12:47  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.36.1.tar.gz">dbus-0.36.1.tar.gz</a></td><td align="right">24-Aug-2005 10:10  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.36.tar.gz">dbus-0.36.tar.gz</a></td><td align="right">23-Aug-2005 13:13  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.35.2.tar.gz">dbus-0.35.2.tar.gz</a></td><td align="right">17-Jul-2005 13:00  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.35.1.tar.gz">dbus-0.35.1.tar.gz</a></td><td align="right">15-Jul-2005 23:50  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.35.tar.gz">dbus-0.35.tar.gz</a></td><td align="right">15-Jul-2005 13:36  </td><td align="right">1.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.34.tar.gz">dbus-0.34.tar.gz</a></td><td align="right">15-Jun-2005 11:36  </td><td align="right">1.4M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.33.tar.gz">dbus-0.33.tar.gz</a></td><td align="right">25-Apr-2005 17:57  </td><td align="right">1.4M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.32.tar.gz">dbus-0.32.tar.gz</a></td><td align="right">29-Mar-2005 10:35  </td><td align="right">1.4M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.23.4.tar.gz">dbus-0.23.4.tar.gz</a></td><td align="right">11-Mar-2005 10:16  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.23.3.tar.gz">dbus-0.23.3.tar.gz</a></td><td align="right">09-Mar-2005 15:13  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.31.tar.gz">dbus-0.31.tar.gz</a></td><td align="right">07-Mar-2005 13:21  </td><td align="right">1.3M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.23.2.tar.gz">dbus-0.23.2.tar.gz</a></td><td align="right">18-Feb-2005 10:20  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.23.1.tar.gz">dbus-0.23.1.tar.gz</a></td><td align="right">11-Feb-2005 10:21  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.22.tar.gz">dbus-0.22.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.21.tar.gz">dbus-0.21.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">1.1M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.20.tar.gz">dbus-0.20.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">1.1M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.9.tar.gz">dbus-0.9.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">789K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.8.tar.gz">dbus-0.8.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">769K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.7.tar.gz">dbus-0.7.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">769K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.6.tar.gz">dbus-0.6.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">703K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.5.tar.gz">dbus-0.5.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">664K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.4.tar.gz">dbus-0.4.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">418K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.3.tar.gz">dbus-0.3.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">379K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.2.tar.gz">dbus-0.2.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">311K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.13.tar.gz">dbus-0.13.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">971K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.12.tar.gz">dbus-0.12.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">969K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.11.tar.gz">dbus-0.11.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">855K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.10.tar.gz">dbus-0.10.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">820K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.1.tar.gz">dbus-0.1.tar.gz</a></td><td align="right">12-Jan-2005 17:20  </td><td align="right">309K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-0.23.tar.gz">dbus-0.23.tar.gz</a></td><td align="right">12-Jan-2005 14:56  </td><td align="right">1.2M</td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.22 (Debian) Server at dbus.freedesktop.org Port 80</address>
+</body></html>

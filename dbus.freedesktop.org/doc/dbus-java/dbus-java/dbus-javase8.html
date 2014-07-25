@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Annotations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 717--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase7.html" >prev</a>] [<a 
+href="dbus-javase7.html#taildbus-javase7.html" >prev-tail</a>] [<a 
+href="#taildbus-javase8.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x29-330008"></a>Annotations</h3>
+<!--l. 719--><p class="noindent" >You can annotate your D-Bus methods as in figure <a 
+href="#x29-3300115">15<!--tex4ht:ref: fig:annotation --></a> to provide hints to other users of your
+API. Common annotations are listed in table <a 
+href="#x29-330022">2<!--tex4ht:ref: tab:annotations --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x29-3300115"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 722--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;org.freedesktop;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.UInt32;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />
+&#x00A0;<br />@org.freedesktop.DBus.Description("Some&#x00A0;Methods");
+&#x00A0;<br />public&#x00A0;interface&#x00A0;DBus&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@org.freedesktop.DBus.Description("Check&#x00A0;if&#x00A0;the&#x00A0;name&#x00A0;has&#x00A0;an&#x00A0;owner")
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;boolean&#x00A0;NameHasOwner(String&#x00A0;name);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@org.freedesktop.DBus.Description("Request&#x00A0;a&#x00A0;name")
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;@org.freedesktop.DBus.Deprecated()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;UInt32&#x00A0;RequestName(String&#x00A0;name,&#x00A0;UInt32&#x00A0;flags);
+&#x00A0;<br />}
+</div>
+<!--l. 737--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;15: </td><td  
+class="content">An annotated method</td></tr></table><!--tex4ht:label?: x29-3300115 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <div class="table">
+                                                                                      
+                                                                                      
+<!--l. 744--><p class="indent" >   <a 
+ id="x29-330022"></a></p><hr class="float" /><div class="float" 
+><table class="float"><tr class="float"><td class="float" 
+>
+                                                                                      
+                                                                                      
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1" /></colgroup><colgroup id="TBL-3-2g"><col 
+id="TBL-3-2" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td11"><span 
+class="cmbx-12">Name                                    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-2"  
+class="td11"><span 
+class="cmbx-12">Meaning                                        </span></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td11">org.freedesktop.DBus.Description       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-2"  
+class="td11">Provide a short 1-line description               </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td11">                                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-2"  
+class="td11">of the method or interface.                        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td11">org.freedesktop.DBus.Deprecated        </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-2"  
+class="td11">This method or interface is Deprecated.       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td11">org.freedesktop.DBus.Method.NoReply</td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-2"  
+class="td11">This method may be called and returned     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-1"  
+class="td11">                                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-2"  
+class="td11">without waiting for a reply.                       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-1"  
+class="td11">org.freedesktop.DBus.Method.Error    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-2"  
+class="td11">This method may throw the listed Exception</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-1"  
+class="td11">                                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-2"  
+class="td11">in addition to the standard ones.                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-9-1"  
+class="td11">                                </td>
+</tr></table></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Table&#x00A0;2: </td><td  
+class="content">Common Annotations</td></tr></table><!--tex4ht:label?: x29-330022 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfloat" />
+   </div>
+                                                                                      
+                                                                                      
+   <!--l. 760--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase7.html" >prev</a>] [<a 
+href="dbus-javase7.html#taildbus-javase7.html" >prev-tail</a>] [<a 
+href="dbus-javase8.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 760--><p class="indent" >   <a 
+ id="taildbus-javase8.html"></a> </p> 
+</body></html> 

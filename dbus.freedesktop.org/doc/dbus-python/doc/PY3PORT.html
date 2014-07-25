@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title>Porting python-dbus to Python 3</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="porting-python-dbus-to-python-3">
+<h1 class="title">Porting python-dbus to Python 3</h1>
+
+<p>This is an experimental port to Python 3.x where x &gt;= 2.  There are lots of
+great sources for porting C extensions to Python 3, including:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://python3porting.com/toc.html">http://python3porting.com/toc.html</a></li>
+<li><a class="reference external" href="http://docs.python.org/howto/cporting.html">http://docs.python.org/howto/cporting.html</a></li>
+<li><a class="reference external" href="http://docs.python.org/py3k/c-api/index.html">http://docs.python.org/py3k/c-api/index.html</a></li>
+</ul>
+</blockquote>
+<p>I also consulted an early take on this port by John Palmieri and David Malcolm
+in the context of Fedora:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=26420">https://bugs.freedesktop.org/show_bug.cgi?id=26420</a></li>
+</ul>
+</blockquote>
+<p>although I have made some different choices.  The patches in that tracker
+issue also don't cover porting the Python bits (e.g. the test suite), nor the
+pygtk -&gt; pygi porting, both which I've also attempted to do in this branch.</p>
+<p>This document outlines my notes and strategies for doing this port.  Please
+feel free to contact me with any bugs, issues, disagreements, suggestions,
+kudos, and curses.</p>
+<p>Barry Warsaw
+<a class="reference external" href="mailto:barry&#37;&#52;&#48;python&#46;org">barry<span>&#64;</span>python<span>&#46;</span>org</a>
+2011-11-11</p>
+<div class="section" id="user-visible-changes">
+<h1>User visible changes</h1>
+<p>You've got some dbus-python code that works great in Python 2.  This branch
+should generally allow your existing Python 2 code to continue to work
+unchanged.  There are a few changes you'll notice in Python 2 though:</p>
+<blockquote>
+<ul class="simple">
+<li>The minimum supported Python 2 version is 2.6.</li>
+<li>All object reprs are unicodes.  This change was made because it greatly
+simplifies the implementation and cross-compatibility with Python 3.</li>
+<li>Some exception strings have changed.</li>
+<li><cite>MethodCallMessage</cite> and <cite>SignalMessage</cite> objects have better reprs now.</li>
+</ul>
+</blockquote>
+<p>What do you need to do to port that to Python 3?  Here are the user visible
+changes you should be aware of, relative to Python 2.  Python 3.2 is the
+minimal required version:</p>
+<blockquote>
+<ul class="simple">
+<li><cite>ByteArray</cite> objects must be initialized with bytes objects, not unicodes.
+Use <cite>b''</cite> literals in the constructor.  This also works in Python 2, where
+bytes objects are aliases for 8-bit strings.</li>
+<li><cite>Byte</cite> objects must be initialized with either a length-1 bytes object
+(again, use <cite>b''</cite> literals to be compatible with either Python 2 or 3)
+or an integer.</li>
+<li>byte signatures (i.e. <cite>y</cite> type codes) must be passed either a length-1
+bytes object or an integer. unicodes (str in Python 3) are not allowed.</li>
+<li><cite>ByteArray</cite> is now a subclass of <cite>bytes</cite>, where in Python 2 it is a
+subclass of <cite>str</cite>.</li>
+<li><cite>dbus.UTF8String</cite> is gone, use <cite>dbus.String</cite>.  Also <cite>utf8_string</cite> arguments
+are no longer allowed.</li>
+<li>All longs are now ints, since Python 3 has only a single int type.  This
+also means that the class hierarchy for the dbus numeric types has changed
+(all derive from int in Python 3).</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="bytes-vs-strings">
+<h1>Bytes vs. Strings</h1>
+<p>All strings in dbus are defined as UTF-8:</p>
+<p><a class="reference external" href="http://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-signatures">http://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-signatures</a></p>
+<p>However, the dbus C API accepts <cite>char*</cite> which must be UTF-8 strings NUL
+terminated and no other NUL bytes.</p>
+<p>This page describes the mapping between Python types and dbus types:</p>
+<blockquote>
+<a class="reference external" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html#basic-types">http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html#basic-types</a></blockquote>
+<p>Notice that it maps dbus <cite>string</cite> (<cite>'s'</cite>) to <cite>dbus.String</cite> (unicode) or
+<cite>dbus.UTF8String</cite> (str).  Also notice that there is no direct dbus equivalent
+of Python's bytes type (although dbus does have byte arrays), so I am mapping
+dbus strings to unicodes in all cases, and getting rid of <cite>dbus.UTF8String</cite> in
+Python 3.  I've also added a <cite>dbus._BytesBase</cite> type which is unused in Python
+2, but which forms the base class for <cite>dbus.ByteArray</cite> in Python 3.  This is
+an implementation detail and not part of the public API.</p>
+<p>In Python 3, object paths (<cite>'o'</cite> or <cite>dbus.ObjectPath</cite>), signatures (<cite>'g'</cite> or
+<cite>dbus.Signature</cite>), bus names, interfaces, and methods are all strings.  A
+previous aborted effort was made to use bytes for these, which at first blush
+may makes some sense, but on deeper consideration does not.  This approach
+also tended to impose too many changes on user code, and caused lots of
+difficult to track down problems.</p>
+<p>In Python 3, all such objects are subclasses of <cite>str</cite> (i.e. <cite>unicode</cite>).</p>
+<p>(As an example, dbus-python's callback dispatching pretty much assumes all
+these things are strings.  When they are bytes, the fact that <cite>'foo' != b'foo'</cite>
+causes dispatch matching to fail in difficult to debug ways.  Even bus names
+are not immune, since they do things like <cite>bus_name[:1] == ':'</cite> which fails in
+multiple ways when <cite>bus_name</cite> is a bytes.  For sanity purposes, these are all
+unicode strings now, and we just eat the complexity at the C level.)</p>
+<p>I am using <cite>#include &lt;bytesobject.h&gt;</cite>, which exposes the PyBytes API to Python
+2.6 and 2.7, and I have converted all internal PyString calls to PyBytes
+calls.  Where this is inappropriate, we'll use PyUnicode calls explicitly.
+E.g. all repr() implementations now return unicodes.  Most of these changes
+shouldn't be noticed, even in existing Python 2 code.</p>
+<p>Generally, I've left the descriptions and docstrings saying &quot;str&quot; instead of
+&quot;unicode&quot; since there's no distinction in Python 3.</p>
+<p>APIs which previously returned PyStrings will usually return PyUnicodes, not
+PyBytes.</p>
+</div>
+<div class="section" id="ints-vs-longs">
+<h1>Ints vs. Longs</h1>
+<p>Python 3 only has PyLong types; PyInts are gone.  For that reason, I've
+switched all PyInt calls to use PyLong in both Python 2 and Python 3.  Python
+3.0 had a nice <cite>&lt;intobject.h&gt;</cite> header that aliased PyInt to PyLong, but that's
+gone as of Python 3.1, and the minimal required Python 3 version is 3.2.</p>
+<p>In the above page mapping basic types, you'll notice that the Python int type
+is mapped to 32-bit signed integers ('i') and the Python long type is mapped
+to 64-bit signed integers ('x').  Python 3 doesn't have this distinction, so
+ints map to 'i' even though ints can be larger in Python 3.  Use the
+dbus-specific integer types if you must have more exact mappings.</p>
+<p>APIs which accepted ints in Python 2 will still do so, but they'll also now
+accept longs.  These APIs obviously only accept longs in Python 3.</p>
+<p>Long literals in Python code are an interesting thing to have to port.  Don't
+use them if you want your code to work in both Python versions.</p>
+<p><cite>dbus._IntBase</cite> is removed in Python 3, you only have <cite>dbus._LongBase</cite>, which
+inherits from a Python 3 int (i.e. a PyLong).  Again, this is an
+implementation detail that users should never care about.</p>
+</div>
+<div class="section" id="macros">
+<h1>Macros</h1>
+<p>In types-internal.h, I define <cite>PY3K</cite> when <cite>PY_MAJOR_VERSION</cite> &gt;= 3, so you'll
+see ifdefs on the former symbol within the C code.</p>
+<p>Python 3 really could use a PY_REFCNT() wrapper for ob_refcnt access.</p>
+</div>
+<div class="section" id="pycapsule-vs-pycobject">
+<h1>PyCapsule vs. PyCObject</h1>
+<p><cite>_dbus_bindings._C_API</cite> is an attribute exposed to Python in the module.  In
+Python 2, this is a PyCObject, but these do not exist in Python &gt;= 3.2, so it
+is replaced with a PyCapsules for Python 3.  However, since PyCapsules were
+only introduced in Python 2.7, and I want to support Python 2.6, PyCObjects
+are still used when this module is compiled for Python 2.</p>
+</div>
+<div class="section" id="python-level-compatibility">
+<h1>Python level compatibility</h1>
+<p><cite>from dbus import _is_py3</cite> gives you a flag to check if you must do something
+different in Python 3.  In general I use this flag to support both versions in
+one set of sources, which seems better than trying to use 2to3.  It's not part
+of the dbus-python public API, so you must not use it in third-party projects.</p>
+</div>
+<div class="section" id="miscellaneous">
+<h1>Miscellaneous</h1>
+<p>The PyDoc_STRVAR() documentation is probably out of date.  Once the API
+choices have been green-lighted upstream, I'll make a pass through the code to
+update them.  It might be tricky based on any differences between Python 2 and
+Python 3.</p>
+<p>There were a few places where I noticed what might be considered bugs,
+unchecked exception conditions, or possible reference count leaks.  In these
+cases, I've just fixed what I can and hopefully haven't made the situation
+worse.</p>
+<p><cite>dbus_py_variant_level_get()</cite> did not check possible error conditions, nor did
+their callers.  When <cite>dbus_py_variant_level_get()</cite> encounters an error, it now
+returns -1, and callers check this.</p>
+<p>As much as possible, I've refrained from general code cleanups (e.g. 80
+columns), unless it just bugged me too much or I touched the code for reasons
+related to the port.  I've also tried to stick to existing C code style,
+e.g. through the use of pervasive <cite>Py_CLEAR()</cite> calls, comparison against NULL
+usually with <cite>!foo</cite>, and such.  As Bart Simpson might write on his classroom
+blackboard:</p>
+<pre class="literal-block">
+This is not a rewrite
+This is not a rewrite
+This is not a rewrite
+This is not a rewrite
+...
+</pre>
+<p>and so on.  Well, mostly ;).</p>
+<p>I think I fixed a reference leak in <cite>DBusPyServer_set_auth_mechanisms()</cite>.
+<cite>PySequence_Fast()</cite> returns a new reference, which wasn't getting decref'd in
+any return path.</p>
+<blockquote>
+<ul class="simple">
+<li>Instantiation of metaclasses uses different, incompatible syntax in Python
+2 and 3.  You have to use direct calling of the metaclass to work across
+versions, i.e. <cite>Interface = InterfaceType('Interface', (object,), {})</cite></li>
+<li><cite>iteritems()</cite> and friends are gone.  I dropped the &quot;iter&quot; prefixes.</li>
+<li><cite>xrange() is gone.  I changed them to use `range()</cite>.</li>
+<li><cite>isSequenceType()</cite> is gone in Python 3, so I use a different idiom there.</li>
+<li><cite>__next__()</cite> vs. <cite>next()</cite></li>
+<li><cite>PyUnicode_FromFormat()</cite> <cite>%V</cite> flag is a clever hack!</li>
+<li><cite>sys.version_info</cite> is a tuple in Python 2.6, not a namedtuple.  i.e. there
+is no <cite>sys.version_info.major</cite></li>
+<li><cite>PyArg_Parse()</cite>: No 'y' code in Python 2; in Python 3, no equivalent of 'z'
+for bytes objects.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="open-issues">
+<h1>Open issues</h1>
+<p>Here are a few things that still need to be done, or for which there may be
+open questions:</p>
+<pre class="literal-block">
+- Update all C extension docstrings for accuracy.
+</pre>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+Generated on: 2012-01-24 16:45 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

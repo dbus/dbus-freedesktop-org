@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Peer to Peer</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 921--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase11.html" >prev</a>] [<a 
+href="dbus-javase11.html#taildbus-javase11.html" >prev-tail</a>] [<a 
+href="#taildbus-javase12.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">12   </span> <a 
+ id="x36-3800012"></a>Peer to Peer</h3>
+<!--l. 923--><p class="noindent" >It is possible to connect two applications together directly without using a bus. D-Bus calls this
+a peer-to-peer connection.
+</p><!--l. 926--><p class="indent" >   The Java implementation provides an alternative to the <span 
+class="cmtt-12">DBusConnection </span>class, the
+<span 
+class="cmtt-12">DirectConnection</span><span class="footnote-mark"><a 
+href="dbus-java37.html#fn21x0"><sup class="textsuperscript">21</sup></a></span><a 
+ id="x36-38001f21"></a> 
+class. This allows you to connect two applications together directly without the need of a
+bus.
+</p><!--l. 932--><p class="indent" >   When using a DirectConnection rather than a DBusConnection most operations are the
+same. The only things which differ are how you connect and the operations which depend on a
+bus. Since peer connections are only one-to-one there is no destination or source
+address to messages. There is also no <span 
+class="cmtt-12">org.freedesktop.DBus </span>service running on the
+bus.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">12.1   </span> <a 
+ id="x36-3900012.1"></a>Connecting to another application</h4>
+<!--l. 940--><p class="noindent" >To connect with a peer connection one of the two applications must be listening on the socket
+and the other connecting. Both of these use the same method to instantiate the
+<span 
+class="cmtt-12">DirectConnection </span>but with different addresses. To listen rather than connect you add the
+<span 
+class="cmti-12">&#8220;listen=true&#8221; </span>parameter to the address. Listening and connecting can be seen in figures <a 
+href="#x36-3900117">17<!--tex4ht:ref: fig:p2plisten --></a> and
+<a 
+href="#x36-3900218">18<!--tex4ht:ref: fig:p2pconnect --></a> respectively. Listening will block at creating the connection until the other application has
+connected.
+</p><!--l. 948--><p class="indent" >   <span 
+class="cmtt-12">DirectConnection </span>also provides a <span 
+class="cmtt-12">createDynamicSession </span>method which generates a
+random abstract unix socket address to use.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x36-3900117"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 952--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+DirectConnection&#x00A0;dc&#x00A0;=&#x00A0;new&#x00A0;DirectConnection("unix:path=/tmp/dbus-ABCXYZ,listen=true");
+</div>
+<!--l. 955--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;17: </td><td  
+class="content">Listening for a peer connection</td></tr></table><!--tex4ht:label?: x36-3900117 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x36-3900218"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 962--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+DirectConnection&#x00A0;dc&#x00A0;=&#x00A0;new&#x00A0;DirectConnection("unix:path=/tmp/dbus-ABCXYZ");
+</div>
+<!--l. 965--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;18: </td><td  
+class="content">Connecting to a peer connection</td></tr></table><!--tex4ht:label?: x36-3900218 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">12.2   </span> <a 
+ id="x36-4000012.2"></a>Getting Remote Objects</h4>
+<!--l. 973--><p class="noindent" >Getting a remote object is essentially the same as with a bus connection, except that you do
+not have to specify a bus name, only an object path. There is also no <span 
+class="cmtt-12">getPeerRemoteObject</span>
+method, since there can only be one peer on this connection.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x36-4000119"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 979--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+RemoteInterface&#x00A0;remote&#x00A0;=&#x00A0;dc.getRemoteObject("/Path");
+&#x00A0;<br />remote.doStuff();
+</div>
+<!--l. 983--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;19: </td><td  
+class="content">Getting a remote object on a peer connection</td></tr></table><!--tex4ht:label?: x36-4000119 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 989--><p class="indent" >   The rest of the API is the same for peer connections as bus connections, ommiting any bus
+addresses.
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 992--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase11.html" >prev</a>] [<a 
+href="dbus-javase11.html#taildbus-javase11.html" >prev-tail</a>] [<a 
+href="dbus-javase12.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 992--><p class="indent" >   <a 
+ id="taildbus-javase12.html"></a>  </p> 
+</body></html> 

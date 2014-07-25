@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>D-Bus programming in Java 1.5</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+
+<h2 class="titleHead">D-Bus programming in Java 1.5</h2>
+  <div class="author" ><span 
+class="cmr-12x-x-120">Matthew Johnson</span>
+<br /><span 
+class="cmr-12x-x-120">dbus@matthew.ath.cx</span></div>
+<br />
+<div class="date" ><span 
+class="cmr-12x-x-120">March 16, 2011</span></div>
+   </div>
+   <div class="tableofcontents">
+   <span class="likesectionToc" ><a 
+href="dbus-javali1.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="dbus-javali2.html#x3-2000" id="QQ2-3-2">List of Figures</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="dbus-javali3.html#x4-3000" id="QQ2-4-3">List of Tables</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="dbus-javase1.html#x5-40001" id="QQ2-5-4">Introduction</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
+href="dbus-javase1.html#x5-50001.1" id="QQ2-5-5">Protocol Implementation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.2 <a 
+href="dbus-javase1.html#x5-60001.2" id="QQ2-5-6">Dependencies</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.3 <a 
+href="dbus-javase1.html#x5-70001.3" id="QQ2-5-7">D-Bus Terminology</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="dbus-javase2.html#x9-130002" id="QQ2-9-13">DBusConnection</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="dbus-javase2.html#x9-140002.1" id="QQ2-9-14">Asynchronous Calls</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="dbus-javase3.html#x13-150003" id="QQ2-13-16">DBusInterface</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="dbus-javase3.html#x13-160003.1" id="QQ2-13-19">Interface name overriding</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="dbus-javase4.html#x17-170004" id="QQ2-17-21">DBusSignal</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="dbus-javase5.html#x20-180005" id="QQ2-20-23">DBusExecutionException</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="dbus-javase6.html#x22-190006" id="QQ2-22-27">DBusSigHandler</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="dbus-javase7.html#x24-200007" id="QQ2-24-29">D-Bus Types</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.1 <a 
+href="dbus-javase7.html#x24-210007.1" id="QQ2-24-30">Basic Types</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
+href="dbus-javase7.html#x24-230007.2" id="QQ2-24-32">Strings</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
+href="dbus-javase7.html#x24-250007.3" id="QQ2-24-35">Arrays</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
+href="dbus-javase7.html#x24-260007.4" id="QQ2-24-36">Maps</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
+href="dbus-javase7.html#x24-270007.5" id="QQ2-24-37">Variants</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.6 <a 
+href="dbus-javase7.html#x24-280007.6" id="QQ2-24-38">Structs</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.7 <a 
+href="dbus-javase7.html#x24-290007.7" id="QQ2-24-41">Objects</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.8 <a 
+href="dbus-javase7.html#x24-300007.8" id="QQ2-24-42">Multiple Return Values</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.9 <a 
+href="dbus-javase7.html#x24-310007.9" id="QQ2-24-45">Full list of types</a></span>
+<br />   <span class="sectionToc" >8 <a 
+href="dbus-javase8.html#x29-330008" id="QQ2-29-48">Annotations</a></span>
+                                                                                      
+                                                                                      
+<br />   <span class="sectionToc" >9 <a 
+href="dbus-javase9.html#x30-340009" id="QQ2-30-51">DBusSerializable</a></span>
+<br />   <span class="sectionToc" >10 <a 
+href="dbus-javase10.html#x32-3500010" id="QQ2-32-53">CreateInterface</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >10.1 <a 
+href="dbus-javase10.html#x32-3600010.1" id="QQ2-32-54">Nested Interfaces</a></span>
+<br />   <span class="sectionToc" >11 <a 
+href="dbus-javase11.html#x35-3700011" id="QQ2-35-55">Debugging</a></span>
+<br />   <span class="sectionToc" >12 <a 
+href="dbus-javase12.html#x36-3800012" id="QQ2-36-56">Peer to Peer</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.1 <a 
+href="dbus-javase12.html#x36-3900012.1" id="QQ2-36-57">Connecting to another application</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.2 <a 
+href="dbus-javase12.html#x36-4000012.2" id="QQ2-36-60">Getting Remote Objects</a></span>
+<br />   <span class="sectionToc" >13 <a 
+href="dbus-javase13.html#x38-4100013" id="QQ2-38-62">Low-level API</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >13.1 <a 
+href="dbus-javase13.html#x38-4200013.1" id="QQ2-38-63">Transport</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >13.2 <a 
+href="dbus-javase13.html#x38-4300013.2" id="QQ2-38-64">Message</a></span>
+<br />   <span class="sectionToc" >14 <a 
+href="dbus-javase14.html#x41-4400014" id="QQ2-41-66">Examples</a></span>
+<br />   <span class="sectionToc" >15 <a 
+href="dbus-javase15.html#x43-4500015" id="QQ2-43-72">Credits</a></span>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</body></html> 
+
+                                                                                      
+
+

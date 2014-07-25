@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dbus.bus.BusConnection</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="dbus-module.html">Package&nbsp;dbus</a> ::
+        <a href="dbus.bus-module.html" onclick="show_private();">Module&nbsp;bus</a> ::
+        Class&nbsp;BusConnection
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dbus.bus.BusConnection-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class BusConnection</h1><p class="nomargin-top"><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+               object --+        
+                        |        
+_dbus_bindings.Connection --+    
+                            |    
+        <a href="dbus.connection.Connection-class.html">connection.Connection</a> --+
+                                |
+                               <strong class="uidshort">BusConnection</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="dbus._dbus.Bus-class.html">_dbus.Bus</a></li>  </ul>
+</dd></dl>
+
+<hr />
+A connection to a D-Bus daemon that implements the
+<tt class="rst-rst-rst-docutils literal rst-rst-docutils literal rst-docutils literal">org.freedesktop.DBus</tt> pseudo-service.
+
+<hr />
+<div class="fields">      <p><strong>Since:</strong>
+        0.81.0
+      </p>
+</div><!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="dbus.connection.Connection-class.html">connection.Connection</a></code></b>:
+      <code><a href="dbus.proxies.ProxyObject-class.html">ProxyObjectClass</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#add_signal_receiver" class="summary-sig-name">add_signal_receiver</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">handler_function</span>,
+        <span class="summary-sig-arg">signal_name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">dbus_interface</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">bus_name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">path</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**keywords</span>)</span><br />
+      Arrange for the given function to be called when a signal matching
+the parameters is received.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_signal_receiver">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#_clean_up_signal_match" class="summary-sig-name" onclick="show_private();">_clean_up_signal_match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">match</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection._clean_up_signal_match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#activate_name_owner" class="summary-sig-name">activate_name_owner</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>)</span><br />
+      Return the unique name for the given bus name, activating it
+if necessary and possible.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.activate_name_owner">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#get_object" class="summary-sig-name">get_object</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>,
+        <span class="summary-sig-arg">object_path</span>,
+        <span class="summary-sig-arg">introspect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">follow_name_owner_changes</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Return a local proxy for the given remote object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_object">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#get_unix_user" class="summary-sig-name">get_unix_user</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>)</span><br />
+      Get the numeric uid of the process owning the given bus name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_unix_user">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#start_service_by_name" class="summary-sig-name">start_service_by_name</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>,
+        <span class="summary-sig-arg">flags</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Start a service which will implement the given bus name on this Bus.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.start_service_by_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#request_name" class="summary-sig-name">request_name</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">flags</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Request a bus name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.request_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#release_name" class="summary-sig-name">release_name</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Release a bus name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.release_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#list_names" class="summary-sig-name">list_names</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a list of all currently-owned names on the bus.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.list_names">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#list_activatable_names" class="summary-sig-name">list_activatable_names</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a list of all names that can be activated on the bus.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.list_activatable_names">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#get_name_owner" class="summary-sig-name">get_name_owner</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>)</span><br />
+      Return the unique connection name of the primary owner of the
+given name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_name_owner">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#watch_name_owner" class="summary-sig-name">watch_name_owner</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>,
+        <span class="summary-sig-arg">callback</span>)</span><br />
+      Watch the unique connection name of the primary owner of the
+given name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.watch_name_owner">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#name_has_owner" class="summary-sig-name">name_has_owner</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bus_name</span>)</span><br />
+      Return True iff the given bus name has an owner on this bus.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.name_has_owner">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#add_match_string" class="summary-sig-name">add_match_string</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rule</span>)</span><br />
+      Arrange for this application to receive messages on the bus that
+match the given rule. This version will block.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_match_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#add_match_string_non_blocking" class="summary-sig-name">add_match_string_non_blocking</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rule</span>)</span><br />
+      Arrange for this application to receive messages on the bus that
+match the given rule. This version will not block, but any errors
+will be ignored.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_match_string_non_blocking">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#remove_match_string" class="summary-sig-name">remove_match_string</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rule</span>)</span><br />
+      Arrange for this application to receive messages on the bus that
+match the given rule. This version will block.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.remove_match_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#remove_match_string_non_blocking" class="summary-sig-name">remove_match_string_non_blocking</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rule</span>)</span><br />
+      Arrange for this application to receive messages on the bus that
+match the given rule. This version will not block, but any errors
+will be ignored.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.remove_match_string_non_blocking">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="dbus.connection.Connection-class.html">connection.Connection</a></code></b>:
+      <code><a href="dbus.connection.Connection-class.html#__init__">__init__</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#call_async">call_async</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#call_blocking">call_blocking</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#call_on_disconnection">call_on_disconnection</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#remove_signal_receiver">remove_signal_receiver</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="dbus.connection.Connection-class.html">connection.Connection</a></code></b> (private):
+      <code><a href="dbus.connection.Connection-class.html#_iter_easy_matches" onclick="show_private();">_iter_easy_matches</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#_signal_func" onclick="show_private();">_signal_func</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>_dbus_bindings.Connection</code></b>:
+      <code>add_message_filter</code>,
+      <code>close</code>,
+      <code>flush</code>,
+      <code>get_is_authenticated</code>,
+      <code>get_is_connected</code>,
+      <code>get_peer_unix_process_id</code>,
+      <code>get_peer_unix_user</code>,
+      <code>get_unique_name</code>,
+      <code>get_unix_fd</code>,
+      <code>list_exported_child_objects</code>,
+      <code>remove_message_filter</code>,
+      <code>send_message</code>,
+      <code>send_message_with_reply</code>,
+      <code>send_message_with_reply_and_block</code>,
+      <code>set_allow_anonymous</code>,
+      <code>set_exit_on_disconnect</code>,
+      <code>set_unique_name</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>_dbus_bindings.Connection</code></b> (private):
+      <code>_new_for_bus</code>,
+      <code>_register_object_path</code>,
+      <code>_require_main_loop</code>,
+      <code>_unregister_object_path</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">a new object with type S, a subtype of T</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.bus.BusConnection-class.html#__new__" class="summary-sig-name">__new__</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">address_or_type</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">mainloop</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.__new__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TYPE_SESSION"></a><span class="summary-name">TYPE_SESSION</span> = <code title="0">0</code><br />
+      Represents a session bus (same as the global dbus.BUS_SESSION)
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TYPE_SYSTEM"></a><span class="summary-name">TYPE_SYSTEM</span> = <code title="1">1</code><br />
+      Represents the system bus (same as the global dbus.BUS_SYSTEM)
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TYPE_STARTER"></a><span class="summary-name">TYPE_STARTER</span> = <code title="2">2</code><br />
+      Represents the bus that started this service by activation (same as
+the global dbus.BUS_STARTER)
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="START_REPLY_SUCCESS"></a><span class="summary-name">START_REPLY_SUCCESS</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="START_REPLY_ALREADY_RUNNING"></a><span class="summary-name">START_REPLY_ALREADY_RUNNING</span> = <code title="2">2</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="dbus.connection.Connection-class.html">connection.Connection</a></code></b> (private):
+      <code><a href="dbus.connection.Connection-class.html#_signal_recipients_by_object_path" onclick="show_private();">_signal_recipients_by_object_path</a></code>,
+      <code><a href="dbus.connection.Connection-class.html#_signals_lock" onclick="show_private();">_signals_lock</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__new__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__new__</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">address_or_type</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">mainloop</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.__new__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns: a new object with type S, a subtype of T</dt>
+    <dt>Overrides:
+        object.__new__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_signal_receiver"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_signal_receiver</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">handler_function</span>,
+        <span class="sig-arg">signal_name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">dbus_interface</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">bus_name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">path</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**keywords</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_signal_receiver">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Arrange for the given function to be called when a signal matching
+the parameters is received.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>handler_function</code></strong> - The function to be called. Its positional arguments will
+be the arguments of the signal. By default it will receive
+no keyword arguments, but see the description of
+the optional keyword arguments below.</li>
+        <li><strong class="pname"><code>signal_name</code></strong> - The signal name; None (the default) matches all names</li>
+        <li><strong class="pname"><code>dbus_interface</code></strong> - The D-Bus interface name with which to qualify the signal;
+None (the default) matches all interface names</li>
+        <li><strong class="pname"><code>bus_name</code></strong> - A bus name for the sender, which will be resolved to a
+unique name if it is not already; None (the default) matches
+any sender.</li>
+        <li><strong class="pname"><code>path</code></strong> - The object path of the object which must have emitted the
+signal; None (the default) matches any object path</li>
+        <li><strong class="pname"><code>utf8_strings</code></strong> - If True, the handler function will receive any string
+arguments as dbus.UTF8String objects (a subclass of str
+guaranteed to be UTF-8). If False (default) it will receive
+any string arguments as dbus.String objects (a subclass of
+unicode).</li>
+        <li><strong class="pname"><code>byte_arrays</code></strong> - If True, the handler function will receive any byte-array
+arguments as dbus.ByteArray objects (a subclass of str).
+If False (default) it will receive any byte-array
+arguments as a dbus.Array of dbus.Byte (subclasses of:
+a list of ints).</li>
+        <li><strong class="pname"><code>sender_keyword</code></strong> - If not None (the default), the handler function will receive
+the unique name of the sending endpoint as a keyword
+argument with this name.</li>
+        <li><strong class="pname"><code>destination_keyword</code></strong> - If not None (the default), the handler function will receive
+the bus name of the destination (or None if the signal is a
+broadcast, as is usual) as a keyword argument with this name.</li>
+        <li><strong class="pname"><code>interface_keyword</code></strong> - If not None (the default), the handler function will receive
+the signal interface as a keyword argument with this name.</li>
+        <li><strong class="pname"><code>member_keyword</code></strong> - If not None (the default), the handler function will receive
+the signal name as a keyword argument with this name.</li>
+        <li><strong class="pname"><code>path_keyword</code></strong> - If not None (the default), the handler function will receive
+the object-path of the sending object as a keyword argument
+with this name.</li>
+        <li><strong class="pname"><code>message_keyword</code></strong> - If not None (the default), the handler function will receive
+the <a href="dbus.lowlevel.SignalMessage-class.html" class="link">dbus.lowlevel.SignalMessage</a> as a keyword argument with
+this name.</li>
+        <li><strong class="pname"><code>arg...</code></strong> - If there are additional keyword parameters of the form
+<tt class="rst-docutils literal">arg</tt><em>n</em>, match only signals where the <em>n</em>th argument
+is the value given for that keyword parameter. As of this
+time only string arguments can be matched (in particular,
+object paths and signatures can't).</li>
+        <li><strong class="pname"><code>named_service</code></strong> - A deprecated alias for <code class="link">bus_name</code>.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="dbus.connection.Connection-class.html#add_signal_receiver">connection.Connection.add_signal_receiver</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_clean_up_signal_match"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_clean_up_signal_match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">match</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection._clean_up_signal_match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="dbus.connection.Connection-class.html#_clean_up_signal_match" onclick="show_private();">connection.Connection._clean_up_signal_match</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="activate_name_owner"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">activate_name_owner</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.activate_name_owner">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the unique name for the given bus name, activating it
+if necessary and possible.</p>
+<p>If the name is already unique or this connection is not to a
+bus daemon, just return it.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a bus name. If the given <code class="link">bus_name</code> exists, the returned
+name identifies its current owner; otherwise the returned name
+does not exist.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if the implementation has failed
+to activate the given bus name.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="dbus.connection.Connection-class.html#activate_name_owner">connection.Connection.activate_name_owner</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_object"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_object</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>,
+        <span class="sig-arg">object_path</span>,
+        <span class="sig-arg">introspect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">follow_name_owner_changes</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_object">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a local proxy for the given remote object.</p>
+<p>Method calls on the proxy are translated into method calls on the
+remote object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bus_name</code></strong> (str) - A bus name (either the unique name or a well-known name)
+of the application owning the object. The keyword argument
+named_service is a deprecated alias for this.</li>
+        <li><strong class="pname"><code>object_path</code></strong> (str) - The object path of the desired object</li>
+        <li><strong class="pname"><code>introspect</code></strong> (bool) - If true (default), attempt to introspect the remote
+object to find out supported methods and their signatures</li>
+        <li><p><strong class="pname"><code>follow_name_owner_changes</code></strong> (bool) - If the object path is a well-known name and this parameter
+is false (default), resolve the well-known name to the unique
+name of its current owner and bind to that instead; if the
+ownership of the well-known name changes in future,
+keep communicating with the original owner.
+This is necessary if the D-Bus API used is stateful.</p>
+<p>If the object path is a well-known name and this parameter
+is true, whenever the well-known name changes ownership in
+future, bind to the new owner, if any.</p>
+<p>If the given object path is a unique name, this parameter
+has no effect.</p></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a <a href="dbus.proxies.ProxyObject-class.html" class="link">dbus.proxies.ProxyObject</a></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if resolving the well-known name to a
+unique name fails</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="dbus.connection.Connection-class.html#get_object">connection.Connection.get_object</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_unix_user"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_unix_user</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_unix_user">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Get the numeric uid of the process owning the given bus name.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bus_name</code></strong> (str) - A bus name, either unique or well-known</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a <a href="dbus.UInt32-class.html" class="link">dbus.UInt32</a></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="start_service_by_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">start_service_by_name</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>,
+        <span class="sig-arg">flags</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.start_service_by_name">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Start a service which will implement the given bus name on this Bus.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bus_name</code></strong> (str) - The well-known bus name to be activated.</li>
+        <li><strong class="pname"><code>flags</code></strong> (dbus.UInt32) - Flags to pass to StartServiceByName (currently none are
+defined)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A tuple of 2 elements. The first is always True, the
+second is either START_REPLY_SUCCESS or
+START_REPLY_ALREADY_RUNNING.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if the service could not be started.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="request_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">request_name</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">flags</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.request_name">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Request a bus name.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (str) - The well-known name to be requested</li>
+        <li><strong class="pname"><code>flags</code></strong> (dbus.UInt32) - A bitwise-OR of 0 or more of the flags
+NAME_FLAG_ALLOW_REPLACEMENT,
+NAME_FLAG_REPLACE_EXISTING
+and NAME_FLAG_DO_NOT_QUEUE</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>REQUEST_NAME_REPLY_PRIMARY_OWNER,
+REQUEST_NAME_REPLY_IN_QUEUE,
+REQUEST_NAME_REPLY_EXISTS or
+REQUEST_NAME_REPLY_ALREADY_OWNER</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if the bus daemon cannot be contacted or
+returns an error.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="release_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">release_name</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.release_name">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Release a bus name.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (str) - The well-known name to be released</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>RELEASE_NAME_REPLY_RELEASED,
+RELEASE_NAME_REPLY_NON_EXISTENT
+or RELEASE_NAME_REPLY_NOT_OWNER</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if the bus daemon cannot be contacted or
+returns an error.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="list_names"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">list_names</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.list_names">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Return a list of all currently-owned names on the bus.
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a dbus.Array of dbus.UTF8String</dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.81.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="list_activatable_names"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">list_activatable_names</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.list_activatable_names">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Return a list of all names that can be activated on the bus.
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a dbus.Array of dbus.UTF8String</dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.81.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="get_name_owner"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_name_owner</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.get_name_owner">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Return the unique connection name of the primary owner of the
+given name.
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - if the <code class="link">bus_name</code> has no owner</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.81.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="watch_name_owner"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">watch_name_owner</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>,
+        <span class="sig-arg">callback</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.watch_name_owner">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Watch the unique connection name of the primary owner of the
+given name.</p>
+<p><code class="link">callback</code> will be called with one argument, which is either the
+unique connection name, or the empty string (meaning the name is
+not owned).</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.81.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="name_has_owner"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">name_has_owner</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bus_name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.name_has_owner">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Return True iff the given bus name has an owner on this bus.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bus_name</code></strong> (str) - The bus name to look up</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a <code class="link">bool</code></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_match_string"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_match_string</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rule</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_match_string">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Arrange for this application to receive messages on the bus that
+match the given rule. This version will block.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rule</code></strong> (str) - The match rule</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - on error.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="add_match_string_non_blocking"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_match_string_non_blocking</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rule</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.add_match_string_non_blocking">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Arrange for this application to receive messages on the bus that
+match the given rule. This version will not block, but any errors
+will be ignored.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rule</code></strong> (str) - The match rule</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - on error.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="remove_match_string"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_match_string</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rule</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.remove_match_string">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Arrange for this application to receive messages on the bus that
+match the given rule. This version will block.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rule</code></strong> (str) - The match rule</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - on error.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<a name="remove_match_string_non_blocking"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_match_string_non_blocking</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rule</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.bus-pysrc.html#BusConnection.remove_match_string_non_blocking">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  Arrange for this application to receive messages on the bus that
+match the given rule. This version will not block, but any errors
+will be ignored.
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rule</code></strong> (str) - The match rule</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="dbus.exceptions.DBusException-class.html">DBusException</a></strong></code> - on error.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80.0
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Feb  1 10:06:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

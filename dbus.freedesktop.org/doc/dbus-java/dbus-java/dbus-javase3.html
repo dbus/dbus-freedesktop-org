@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>DBusInterface</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 215--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase13.html" >next</a>] [<a 
+href="dbus-javase2.html" >prev</a>] [<a 
+href="dbus-javase2.html#taildbus-javase2.html" >prev-tail</a>] [<a 
+href="#taildbus-javase3.html">tail</a>] [<a 
+href="dbus-java.html#dbus-javase9.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x13-150003"></a>DBusInterface</h3>
+<!--l. 217--><p class="noindent" >To call methods or expose methods on D-Bus you need to define them with their exact
+signature in a Java interface. The full name of this interface must be the same as the D-Bus
+interface they represent. In addition, D-Bus interface names must contain at least
+one period. This means that DBusInterfaces cannot be declared without being in a
+package.
+</p><!--l. 223--><p class="indent" >   For example, if I want to expose methods on the interface <span 
+class="cmti-12">&#8220;org.freedesktop.DBus&#8221; </span>I would
+define a Java interface in the package <span 
+class="cmtt-12">org.freedesktop </span>called <span 
+class="cmtt-12">DBus</span>. This would be in the file
+<span 
+class="cmtt-12">org/freedesktop/DBus.java </span>as normal. Any object wanting to export these methods would
+implement <span 
+class="cmtt-12">org.freedesktop.DBus</span>.
+</p><!--l. 229--><p class="indent" >   Any interfaces which can be exported over D-Bus must extend
+<span 
+class="cmtt-12">DBusInterface</span><span class="footnote-mark"><a 
+href="dbus-java14.html#fn7x0"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x13-15001f7"></a> .
+A class may implement more than one exportable interface, all public methods declared in an
+interface which extend <span 
+class="cmtt-12">DBusInterface </span>will be exported.
+</p><!--l. 234--><p class="indent" >   A sample interface definition is given in figure&#x00A0;<a 
+href="#x13-150032">2<!--tex4ht:ref: fig:interface --></a>, and a class which
+implements it in figure&#x00A0;<a 
+href="#x13-150043">3<!--tex4ht:ref: fig:class --></a>. More complicated definitions can be seen in the test
+classes<span class="footnote-mark"><a 
+href="dbus-java15.html#fn8x0"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x13-15002f8"></a> .
+</p><!--l. 240--><p class="indent" >   All method calls by other programs on objects you export over D-Bus are executed in their
+own thread.
+</p><!--l. 243--><p class="indent" >   <span 
+class="cmtt-12">DBusInterface </span>itself specifies one method <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">boolean</span><span 
+class="cmtt-12">&#x00A0;isRemote()</span></span></span>. If this is executed on a
+remote object it will always return true. Local objects implementing a remote interface must
+implement this method to return false.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x13-150032"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 248--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;org.freedesktop;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.UInt32;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;interface&#x00A0;DBus&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;boolean&#x00A0;NameHasOwner(String&#x00A0;name);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;UInt32&#x00A0;RequestName(String&#x00A0;name,&#x00A0;UInt32&#x00A0;flags);
+&#x00A0;<br />}
+</div>
+<!--l. 259--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;2: </td><td  
+class="content">An interface which exposes two methods</td></tr></table><!--tex4ht:label?: x13-150032 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x13-150043"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 266--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;my.real.implementation;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBus;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.UInt32;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;class&#x00A0;DBusImpl&#x00A0;implements&#x00A0;DBus
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;Vector&#x003C;String&#x003E;&#x00A0;names;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;boolean&#x00A0;NameHasOwner(String&#x00A0;name)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(names.contains(name))&#x00A0;return&#x00A0;true;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;else&#x00A0;return&#x00A0;false;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;UInt32&#x00A0;RequestName(String&#x00A0;name,&#x00A0;UInt32&#x00A0;flags)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;names.add(name);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;new&#x00A0;UInt32(0);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;boolean&#x00A0;isRemote()&#x00A0;{&#x00A0;return&#x00A0;false;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 287--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;3: </td><td  
+class="content">A class providing a real implementation which can be exported</td></tr></table><!--tex4ht:label?: x13-150043 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x13-160003.1"></a>Interface name overriding</h4>
+<!--l. 295--><p class="noindent" >It is highly recommended that the Java interface and package name match the D-Bus interface.
+However, if, for some reason, this is not possible then the name can be overridden by use of an
+Annotation.
+</p><!--l. 299--><p class="indent" >   To override the Java interface name you should add an annotation to the interface of
+<span 
+class="cmtt-12">DBusInterfaceName</span><span class="footnote-mark"><a 
+href="dbus-java16.html#fn9x0"><sup class="textsuperscript">9</sup></a></span><a 
+ id="x13-16001f9"></a> 
+with a value of the desired D-Bus interface name. An example of this can be seen in figure
+<a 
+href="#x13-160024">4<!--tex4ht:ref: fig:interfacename --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x13-160024"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 306--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;my.package;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterfaceName;
+&#x00A0;<br />
+&#x00A0;<br />@DBusInterfaceName("my.otherpackage.Remote")
+&#x00A0;<br />public&#x00A0;interface&#x00A0;Remote&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...
+&#x00A0;<br />}
+</div>
+<!--l. 317--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;4: </td><td  
+class="content">Overloading the name of an interface.</td></tr></table><!--tex4ht:label?: x13-160024 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 323--><p class="indent" >   If you have signals which are declared in a renamed interface (see below for signals) then
+when adding a signal handler you <span 
+class="cmti-12">must </span>use an <span 
+class="cmtt-12">addSigHandler </span>method which takes a
+class object corresponding to that signal. If you do not then receiving the signal will
+fail.
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 328--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase13.html" >next</a>] [<a 
+href="dbus-javase2.html" >prev</a>] [<a 
+href="dbus-javase2.html#taildbus-javase2.html" >prev-tail</a>] [<a 
+href="dbus-javase3.html" >front</a>] [<a 
+href="dbus-java.html#dbus-javase9.html" >up</a>] </p></div>
+<!--l. 328--><p class="indent" >   <a 
+ id="taildbus-javase3.html"></a>  </p> 
+</body></html> 

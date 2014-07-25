@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Examples</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 1064--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase13.html" >prev</a>] [<a 
+href="dbus-javase13.html#taildbus-javase13.html" >prev-tail</a>] [<a 
+href="#taildbus-javase14.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">14   </span> <a 
+ id="x41-4400014"></a>Examples</h3>
+<!--l. 1066--><p class="noindent" >As an example here are a complete set of interfaces for the
+bluemon<span class="footnote-mark"><a 
+href="dbus-java42.html#fn24x0"><sup class="textsuperscript">24</sup></a></span><a 
+ id="x41-44001f24"></a> 
+daemon, which communicates over D-Bus. These interfaces were all created by querying
+introspection data over the bus.
+</p><!--l. 1071--><p class="indent" >
+                                                                                      
+                                                                                      
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x41-4400221"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1074--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;cx.ath.matthew.bluemon;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.UInt32;
+&#x00A0;<br />public&#x00A0;interface&#x00A0;Bluemon&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;public&#x00A0;Triplet&#x003C;String,&#x00A0;Boolean,&#x00A0;UInt32&#x003E;
+&#x00A0;<br />&#x00A0;&#x00A0;Status(String&#x00A0;address);
+&#x00A0;<br />}
+</div>
+<!--l. 1084--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;21: </td><td  
+class="content">cx/ath/matthew/bluemon/Bluemon.java</td></tr></table><!--tex4ht:label?: x41-4400221 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1089--><p class="indent" >
+                                                                                      
+                                                                                      
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x41-4400322"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1092--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;cx.ath.matthew.bluemon;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSignal;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.exceptions.DBusException;
+&#x00A0;<br />public&#x00A0;interface&#x00A0;ProximitySignal&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;static&#x00A0;class&#x00A0;Connect&#x00A0;extends&#x00A0;DBusSignal
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;String&#x00A0;address;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Connect(String&#x00A0;path,&#x00A0;String&#x00A0;address)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;throws&#x00A0;DBusException
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;super(path,&#x00A0;address);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.address&#x00A0;=&#x00A0;address;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;static&#x00A0;class&#x00A0;Disconnect&#x00A0;extends&#x00A0;DBusSignal
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;String&#x00A0;address;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Disconnect(String&#x00A0;path,&#x00A0;String&#x00A0;address)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;throws&#x00A0;DBusException
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;super(path,&#x00A0;address);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.address&#x00A0;=&#x00A0;address;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 1121--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;22: </td><td  
+class="content">cx/ath/matthew/bluemon/ProximitySignal.java</td></tr></table><!--tex4ht:label?: x41-4400322 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1126--><p class="indent" >
+                                                                                      
+                                                                                      
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x41-4400423"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1129--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;cx.ath.matthew.bluemon;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.Tuple;
+&#x00A0;<br />/**&#x00A0;Just&#x00A0;a&#x00A0;typed&#x00A0;container&#x00A0;class&#x00A0;*/
+&#x00A0;<br />public&#x00A0;final&#x00A0;class&#x00A0;Triplet&#x00A0;&#x003C;A,B,C&#x003E;&#x00A0;extends&#x00A0;Tuple
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;A&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;B&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;C&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;Triplet(A&#x00A0;a,&#x00A0;B&#x00A0;b,&#x00A0;C&#x00A0;c)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;super(a,&#x00A0;b,&#x00A0;c);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.a&#x00A0;=&#x00A0;a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.b&#x00A0;=&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.c&#x00A0;=&#x00A0;c;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 1147--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;23: </td><td  
+class="content">cx/ath/matthew/bluemon/Triplet.java</td></tr></table><!--tex4ht:label?: x41-4400423 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1152--><p class="indent" >
+                                                                                      
+                                                                                      
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x41-4400524"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1155--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;cx.ath.matthew.bluemon;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusConnection;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSigHandler;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSignal;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.UInt32;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.exceptions.DBusException;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;class&#x00A0;Query&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;static&#x00A0;void&#x00A0;main(String[]&#x00A0;args)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;String&#x00A0;btid;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Triplet&#x003C;String,&#x00A0;Boolean,&#x00A0;UInt32&#x003E;&#x00A0;rv&#x00A0;=&#x00A0;null;
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(0&#x00A0;==&#x00A0;args.length)&#x00A0;btid&#x00A0;=&#x00A0;"";
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;else&#x00A0;btid&#x00A0;=&#x00A0;args[0];
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;DBusConnection&#x00A0;conn&#x00A0;=&#x00A0;null;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;try&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn&#x00A0;=&#x00A0;DBusConnection.getConnection(DBusConnection.SYSTEM);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}&#x00A0;catch&#x00A0;(DBusException&#x00A0;De)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.exit(1);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Bluemon&#x00A0;b&#x00A0;=&#x00A0;(Bluemon)&#x00A0;conn.getRemoteObject(
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"cx.ath.matthew.bluemon.server",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"/cx/ath/matthew/bluemon/Bluemon",&#x00A0;Bluemon.class);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;try&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;rv&#x00A0;=&#x00A0;b.Status(btid);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}&#x00A0;catch&#x00A0;(RuntimeException&#x00A0;Re)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.exit(1);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;String&#x00A0;address&#x00A0;=&#x00A0;rv.a;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;boolean&#x00A0;status&#x00A0;=&#x00A0;rv.b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;int&#x00A0;level&#x00A0;=&#x00A0;rv.c.intValue();
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(status)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Device&#x00A0;"+address+
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"&#x00A0;connected&#x00A0;with&#x00A0;level&#x00A0;"+level);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;else
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Device&#x00A0;"+address+"&#x00A0;not&#x00A0;connected");
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn.disconnect();
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+                                                                                      
+                                                                                      
+<!--l. 1198--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;24: </td><td  
+class="content">cx/ath/matthew/bluemon/Query.java</td></tr></table><!--tex4ht:label?: x41-4400524 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1203--><p class="indent" >
+                                                                                      
+                                                                                      
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x41-4400625"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1206--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+/*&#x00A0;cx/ath/matthew/bluemon/Client.java&#x00A0;*/
+&#x00A0;<br />package&#x00A0;cx.ath.matthew.bluemon;
+&#x00A0;<br />
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusConnection;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSigHandler;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSignal;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.exceptions.DBusException;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;class&#x00A0;Client&#x00A0;implements&#x00A0;DBusSigHandler
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;void&#x00A0;handle(DBusSignal&#x00A0;s)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(s&#x00A0;instanceof&#x00A0;ProximitySignal.Connect)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Got&#x00A0;a&#x00A0;connect&#x00A0;for&#x00A0;"
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;+((ProximitySignal.Connect)&#x00A0;s).address);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;else&#x00A0;if&#x00A0;(s&#x00A0;instanceof&#x00A0;ProximitySignal.Disconnect)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Got&#x00A0;a&#x00A0;disconnect&#x00A0;for&#x00A0;"
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;+((ProximitySignal.Disconnect)&#x00A0;s).address);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;static&#x00A0;void&#x00A0;main(String[]&#x00A0;args)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Creating&#x00A0;Connection");
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;DBusConnection&#x00A0;conn&#x00A0;=&#x00A0;null;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;try&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn&#x00A0;=&#x00A0;DBusConnection
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;.getConnection(DBusConnection.SYSTEM);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}&#x00A0;catch&#x00A0;(DBusException&#x00A0;DBe)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.out.println("Could&#x00A0;not&#x00A0;connect&#x00A0;to&#x00A0;bus");
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.exit(1);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;try&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn.addSigHandler(ProximitySignal.Connect.class,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;new&#x00A0;Client());
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn.addSigHandler(ProximitySignal.Disconnect.class,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;new&#x00A0;Client());
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}&#x00A0;catch&#x00A0;(DBusException&#x00A0;DBe)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;conn.disconnect();
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.exit(1);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+                                                                                      
+                                                                                      </div>
+<!--l. 1250--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;25: </td><td  
+class="content">cx/ath/matthew/bluemon/Client.java</td></tr></table><!--tex4ht:label?: x41-4400625 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 1255--><p class="indent" >
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 1257--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase13.html" >prev</a>] [<a 
+href="dbus-javase13.html#taildbus-javase13.html" >prev-tail</a>] [<a 
+href="dbus-javase14.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 1257--><p class="indent" >   <a 
+ id="taildbus-javase14.html"></a> </p> 
+</body></html> 

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Introduction</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 48--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase5.html" >next</a>] [<a 
+href="dbus-javali3.html" >prev</a>] [<a 
+href="dbus-javali3.html#taildbus-javali3.html" >prev-tail</a>] [<a 
+href="#taildbus-javase1.html">tail</a>] [<a 
+href="dbus-java.html#dbus-javase1.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x5-40001"></a>Introduction</h3>
+<!--l. 50--><p class="noindent" >This document describes how to use the Java implementation of D-Bus. D-Bus is an IPC
+mechanism which at a low level uses message passing over Unix Sockets or IP. D-Bus
+models its messages as either function calls on remote objects, or signals emitted from
+them.
+</p><!--l. 55--><p class="indent" >   Java is an object-oriented language and this implementation attempts to match the D-Bus
+IPC model to the Java object model. The implementation also make heavy use of threads and
+exceptions. The programmer should be careful to take care of synchronisation issues in their
+code. All method calls by remote programs on exported objects and all signal handlers are run
+in new threads. Any calls on remote objects may throw <span 
+class="cmtt-12">DBusExecutionException</span>,
+which is a runtime exception and so the compiler will not remind you to handle
+it.
+</p><!--l. 63--><p class="indent" >   The Java D-Bus API is also documented in the
+JavaDoc<span class="footnote-mark"><a 
+href="dbus-java6.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x5-4001f1"></a> , D-Bus is described
+in the specification<span class="footnote-mark"><a 
+href="dbus-java7.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x5-4002f2"></a>  and
+the API documentation<span class="footnote-mark"><a 
+href="dbus-java8.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x5-4003f3"></a> .
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x5-50001.1"></a>Protocol Implementation</h4>
+<!--l. 70--><p class="noindent" >This library is a native Java implementation of the D-Bus protocol and not a wrapper around
+the C reference implementation.
+</p><!--l. 73--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x5-60001.2"></a>Dependencies</h4>
+<!--l. 75--><p class="noindent" >This library requires Java 1.5-compatible VM and compiler (either Sun, or ecj+jamvm with
+classpath-generics newer than 0.19) and the unix socket, debug and hexdump libraries from
+<a 
+href="http://www.matthew.ath.cx/projects/java/" class="url" ><span 
+class="cmtt-12">http://www.matthew.ath.cx/projects/java/</span></a>.
+                                                                                      
+                                                                                      
+</p><!--l. 79--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x5-70001.3"></a>D-Bus Terminology</h4>
+<!--l. 81--><p class="noindent" >D-Bus has several notions which are exposed to the users of the Java implementation.
+</p><!--l. 84--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.3.1   </span> <a 
+ id="x5-80001.3.1"></a>Bus Names</h5>
+<!--l. 86--><p class="noindent" >Programs on the bus are issued a unique identifier by the bus. This is guaranteed
+to be unique within one run of the bus, but is assigned sequentially to each new
+connection.
+</p><!--l. 90--><p class="indent" >   There are also so called well-known bus names which a device can request on the bus. These
+are of the form <span 
+class="cmti-12">&#8220;org.freedesktop.DBus&#8221;</span>, and any program can request them if they are not
+already owned.
+</p><!--l. 94--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.3.2   </span> <a 
+ id="x5-90001.3.2"></a>Interfaces</h5>
+<!--l. 96--><p class="noindent" >All method calls and signals are specified using an interface, similar to those in Java. When
+executing a method or sending a signal you specify the interface the method belongs to. These
+are of the form <span 
+class="cmti-12">&#8220;org.freedesktop.DBus&#8221;</span>.
+</p><!--l. 101--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.3.3   </span> <a 
+ id="x5-100001.3.3"></a>Object Paths</h5>
+<!--l. 103--><p class="noindent" >A program may expose more than one object which implements an interface. Object paths of
+the form <span 
+class="cmti-12">&#8220;/org/freedesktop/DBus&#8221; </span>are used to distinguish objects.
+</p><!--l. 107--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.3.4   </span> <a 
+ id="x5-110001.3.4"></a>Member Names</h5>
+<!--l. 109--><p class="noindent" >Methods and Signals have names which identify them within an interface. D-Bus does
+not support method overloading, only one method or signal should exist with each
+name.
+</p><!--l. 113--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.3.5   </span> <a 
+ id="x5-120001.3.5"></a>Errors</h5>
+<!--l. 115--><p class="noindent" >A reply to any message may be an error condition. In which case you reply with an error
+message which has a name of the form <span 
+class="cmti-12">&#8220;org.freedesktop.DBus.Error.ServiceUnknown&#8221;</span>.
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 119--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase5.html" >next</a>] [<a 
+href="dbus-javali3.html" >prev</a>] [<a 
+href="dbus-javali3.html#taildbus-javali3.html" >prev-tail</a>] [<a 
+href="dbus-javase1.html" >front</a>] [<a 
+href="dbus-java.html#dbus-javase1.html" >up</a>] </p></div>
+<!--l. 119--><p class="indent" >   <a 
+ id="taildbus-javase1.html"></a>   </p> 
+</body></html> 

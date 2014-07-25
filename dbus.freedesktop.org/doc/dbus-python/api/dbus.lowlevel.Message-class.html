@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dbus.lowlevel.Message</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="dbus-module.html">Package&nbsp;dbus</a> ::
+        <a href="dbus.lowlevel-module.html">Module&nbsp;lowlevel</a> ::
+        Class&nbsp;Message
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dbus.lowlevel.Message-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Message</h1><p class="nomargin-top"><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">Message</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="dbus.lowlevel.ErrorMessage-class.html">ErrorMessage</a></li><li>, <a href="dbus.lowlevel.MethodCallMessage-class.html">MethodCallMessage</a></li><li>, <a href="dbus.lowlevel.MethodReturnMessage-class.html">MethodReturnMessage</a></li><li>, <a href="dbus.lowlevel.SignalMessage-class.html">SignalMessage</a></li>  </ul>
+</dd></dl>
+
+<hr />
+A message to be sent or received over a D-Bus Connection.
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">a new object with type S, a subtype of T</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.lowlevel.Message-class.html#__new__" class="summary-sig-name">__new__</a>(<span class="summary-sig-arg">T</span>,
+        <span class="summary-sig-arg">S</span>,
+        <span class="summary-sig-arg">...</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.__new__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.lowlevel.Message-class.html#append" class="summary-sig-name">append</a>(<span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Set the message's arguments from the positional parameter, according to
+the signature given by the <tt class="rst-docutils literal">signature</tt> keyword parameter.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.append">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Message (or subclass)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="copy"></a><span class="summary-sig-name">copy</span>(<span class="summary-sig-arg">message</span>)</span><br />
+      Deep-copy the message, resetting the serial number to zero.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.copy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.lowlevel.Message-class.html#get_args_list" class="summary-sig-name">get_args_list</a>(<span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Return the message's arguments. Keyword arguments control the translation
+of D-Bus types to Python:</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_args_list">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_auto_start"></a><span class="summary-sig-name">get_auto_start</span>(<span class="summary-sig-arg">message</span>)</span><br />
+      Return true if this message will cause an owner for the destination name
+to be auto-started.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_auto_start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_destination"></a><span class="summary-sig-name">get_destination</span>()</span><br />
+      Return the message's destination bus name, or None if none.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_destination">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_error_name"></a><span class="summary-sig-name">get_error_name</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_error_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_interface"></a><span class="summary-sig-name">get_interface</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_interface">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_member"></a><span class="summary-sig-name">get_member</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_member">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_no_reply"></a><span class="summary-sig-name">get_no_reply</span>(<span class="summary-sig-arg">message</span>)</span><br />
+      Return true if this message need not be replied to.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_no_reply">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">ObjectPath or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_path"></a><span class="summary-sig-name">get_path</span>()</span><br />
+      Return the message's destination object path (if it's a method call) or
+source object path (if it's a method reply or a signal) or None (if it
+has no path).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of str, or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_path_decomposed"></a><span class="summary-sig-name">get_path_decomposed</span>()</span><br />
+      Return a list of path components (e.g. /foo/bar -&gt; ['foo','bar'], / -&gt; [])
+or None if the message has no associated path.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_path_decomposed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">long</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_reply_serial"></a><span class="summary-sig-name">get_reply_serial</span>(<span class="summary-sig-arg">message</span>)</span><br />
+      Returns the serial that the message is a reply to or 0 if none.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_reply_serial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_sender"></a><span class="summary-sig-name">get_sender</span>()</span><br />
+      Return the message's sender unique name, or None if none.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_sender">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">long</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.lowlevel.Message-class.html#get_serial" class="summary-sig-name">get_serial</a>(<span class="summary-sig-arg">message</span>)</span><br />
+      Returns the serial of a message or 0 if none has been specified.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_serial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Signature or None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_signature"></a><span class="summary-sig-name">get_signature</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_signature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_type"></a><span class="summary-sig-name">get_type</span>(<span class="summary-sig-arg">message</span>)</span><br />
+      Returns the type of the message.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_type">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_destination"></a><span class="summary-sig-name">has_destination</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_destination(bus_name: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_destination">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_interface"></a><span class="summary-sig-name">has_interface</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_interface(interface: str or None) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_interface">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_member"></a><span class="summary-sig-name">has_member</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_member(name: str or None) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_member">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_path"></a><span class="summary-sig-name">has_path</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_path(name: str or None) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_sender"></a><span class="summary-sig-name">has_sender</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_sender(unique_name: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_sender">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_signature"></a><span class="summary-sig-name">has_signature</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      has_signature(signature: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.has_signature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_error"></a><span class="summary-sig-name">is_error</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      is_error(error: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.is_error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_method_call"></a><span class="summary-sig-name">is_method_call</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      is_method_call(interface: str, member: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.is_method_call">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_signal"></a><span class="summary-sig-name">is_signal</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      is_signal(interface: str, member: str) -&gt; bool</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.is_signal">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_auto_start"></a><span class="summary-sig-name">set_auto_start</span>(<span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">bool</span>)</span><br />
+      Set whether this message will cause an owner for the destination name
+to be auto-started.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_auto_start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_destination"></a><span class="summary-sig-name">set_destination</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_destination(bus_name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_destination">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_error_name"></a><span class="summary-sig-name">set_error_name</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_error_name(name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_error_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_interface"></a><span class="summary-sig-name">set_interface</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_interface(name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_interface">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_member"></a><span class="summary-sig-name">set_member</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_member(unique_name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_member">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_no_reply"></a><span class="summary-sig-name">set_no_reply</span>(<span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">bool</span>)</span><br />
+      Set whether no reply to this message is required.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_no_reply">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_path"></a><span class="summary-sig-name">set_path</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_path(name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_reply_serial"></a><span class="summary-sig-name">set_reply_serial</span>(<span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">bool</span>)</span><br />
+      Set the serial that this message is a reply to.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_reply_serial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_sender"></a><span class="summary-sig-name">set_sender</span>(<span class="summary-sig-arg">...</span>)</span><br />
+      set_sender(unique_name: str or None)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.set_sender">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Signature [static method]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus.lowlevel.Message-class.html#guess_signature" class="summary-sig-name">guess_signature</a>(<span class="summary-sig-arg">*args</span>)</span><br />
+      Guess a D-Bus signature which should be used to encode the given
+Python objects.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.guess_signature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__new__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__new__</span>(<span class="sig-arg">T</span>,
+        <span class="sig-arg">S</span>,
+        <span class="sig-arg">...</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.__new__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns: a new object with type S, a subtype of T</dt>
+    <dt>Overrides:
+        object.__new__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="append"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">append</span>(<span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.append">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set the message's arguments from the positional parameter, according to
+the signature given by the <tt class="rst-rst-docutils literal rst-docutils literal">signature</tt> keyword parameter.</p>
+<p>The following type conversions are supported:</p>
+<table border="1" class="rst-docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="rst-head">D-Bus (in signature)</th>
+<th class="rst-head">Python</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>boolean (b)</td>
+<td>any object (via bool())</td>
+</tr>
+<tr><td>byte (y)</td>
+<td>string of length 1
+any integer</td>
+</tr>
+<tr><td>any integer type</td>
+<td>any integer</td>
+</tr>
+<tr><td>double (d)</td>
+<td>any float</td>
+</tr>
+<tr><td>object path</td>
+<td>anything with a __dbus_object_path__ attribute</td>
+</tr>
+<tr><td>string, signature, object path</td>
+<td>str (must be UTF-8) or unicode</td>
+</tr>
+<tr><td>dict (a{...})</td>
+<td>any mapping</td>
+</tr>
+<tr><td>array (a...)</td>
+<td>any iterable over appropriate objects</td>
+</tr>
+<tr><td>struct ((...))</td>
+<td>any iterable over appropriate objects</td>
+</tr>
+<tr><td>variant</td>
+<td>any object above (guess type as below)</td>
+</tr>
+</tbody>
+</table>
+<p>Here 'any integer' means anything on which int() or long()
+(as appropriate) will work, except for basestring subclasses.
+'Any float' means anything on which float() will work, except
+for basestring subclasses.</p>
+<p>If there is no signature, guess from the arguments using
+the static method <a href="dbus.lowlevel.Message-class.html#guess_signature" class="link">Message.guess_signature</a>.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_args_list"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_args_list</span>(<span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_args_list">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the message's arguments. Keyword arguments control the translation
+of D-Bus types to Python:</p>
+<p>Most of the type mappings should be fairly obvious:</p>
+<table border="1" class="rst-docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="rst-head">D-Bus</th>
+<th class="rst-head">Python</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>byte (y)</td>
+<td>dbus.Byte (int subclass)</td>
+</tr>
+<tr><td>bool (b)</td>
+<td>dbus.Boolean (int subclass)</td>
+</tr>
+<tr><td>Signature (g)</td>
+<td>dbus.Signature (str subclass)</td>
+</tr>
+<tr><td>intNN, uintNN</td>
+<td>dbus.IntNN, dbus.UIntNN (int or long subclasses)</td>
+</tr>
+<tr><td>double (d)</td>
+<td>dbus.Double</td>
+</tr>
+<tr><td>string (s)</td>
+<td>dbus.String (unicode subclass)
+(or dbus.UTF8String, str subclass, if utf8_strings set)</td>
+</tr>
+<tr><td>Object path (o)</td>
+<td>dbus.ObjectPath (str subclass)</td>
+</tr>
+<tr><td>dict (a{...})</td>
+<td>dbus.Dictionary</td>
+</tr>
+<tr><td>array (a...)</td>
+<td>dbus.Array (list subclass) containing appropriate types</td>
+</tr>
+<tr><td>byte array (ay)</td>
+<td>dbus.ByteArray (str subclass) if byte_arrays set; or
+list of Byte</td>
+</tr>
+<tr><td>struct ((...))</td>
+<td>dbus.Struct (tuple subclass) of appropriate types</td>
+</tr>
+<tr><td>variant (v)</td>
+<td>contained type, but with variant_level &gt; 0</td>
+</tr>
+</tbody>
+</table>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><p><strong class="pname"><code>byte_arrays</code></strong> (bool) - If true, convert arrays of byte (signature 'ay') into dbus.ByteArray,
+a str subclass. In practice, this is usually what you want, but
+it's off by default for consistency.</p>
+<p>If false (default), convert them into a dbus.Array of Bytes.</p></li>
+        <li><strong class="pname"><code>utf8_strings</code></strong> (bool) - If true, return D-Bus strings as Python 8-bit strings (of UTF-8).
+If false (default), return D-Bus strings as Python unicode objects.</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_serial"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_serial</span>(<span class="sig-arg">message</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.get_serial">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the serial of a message or 0 if none has been specified.</p>
+<p>The message's serial number is provided by the application sending the
+message and is used to identify replies to this message. All messages
+received on a connection will have a serial, but messages you haven't
+sent yet may return 0.</p>
+  <dl class="fields">
+    <dt>Returns: long</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="guess_signature"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">guess_signature</span>(<span class="sig-arg">*args</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="dbus.lowlevel-pysrc.html#Message.guess_signature">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Guess a D-Bus signature which should be used to encode the given
+Python objects.</p>
+<p>The signature is constructed as follows:</p>
+<table border="1" class="rst-docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="rst-head">Python</th>
+<th class="rst-head">D-Bus</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>D-Bus type, variant_level &gt; 0</td>
+<td>variant (v)</td>
+</tr>
+<tr><td>D-Bus type, variant_level == 0</td>
+<td>the corresponding type</td>
+</tr>
+<tr><td>anything with a
+__dbus_object_path__ attribute</td>
+<td>object path</td>
+</tr>
+<tr><td>bool</td>
+<td>boolean (y)</td>
+</tr>
+<tr><td>any other int subclass</td>
+<td>int32 (i)</td>
+</tr>
+<tr><td>any other long subclass</td>
+<td>int64 (x)</td>
+</tr>
+<tr><td>any other float subclass</td>
+<td>double (d)</td>
+</tr>
+<tr><td>any other str subclass</td>
+<td>string (s)</td>
+</tr>
+<tr><td>any other unicode subclass</td>
+<td>string (s)</td>
+</tr>
+<tr><td>any other tuple subclass</td>
+<td>struct ((...))</td>
+</tr>
+<tr><td>any other list subclass</td>
+<td>array (a...), guess
+contents' type according to
+type of first item</td>
+</tr>
+<tr><td>any other dict subclass</td>
+<td>dict (a{...}), guess key,
+value type according to
+types for an arbitrary item</td>
+</tr>
+<tr><td>anything else</td>
+<td>raise TypeError</td>
+</tr>
+</tbody>
+</table>
+  <dl class="fields">
+    <dt>Returns: Signature [static method]</dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Feb  1 10:06:29 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

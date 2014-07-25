@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>DBusSignal</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 328--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase3.html" >prev</a>] [<a 
+href="dbus-javase3.html#taildbus-javase3.html" >prev-tail</a>] [<a 
+href="#taildbus-javase4.html">tail</a>] [<a 
+href="dbus-java.html#dbus-javase13.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x17-170004"></a>DBusSignal</h3>
+<!--l. 330--><p class="noindent" >Signals are also declared as part of an interface. The Java API models these
+as inner classes within an interface. The containing interface must extend
+<span 
+class="cmtt-12">DBusInterface</span>, and the inner classes representing the signals must extend
+<span 
+class="cmtt-12">DBusSignal</span><span class="footnote-mark"><a 
+href="dbus-java18.html#fn10x0"><sup class="textsuperscript">10</sup></a></span><a 
+ id="x17-17001f10"></a> .
+The Signal name is derived from the name of this inner class, and the interface from its
+containing interface.
+</p><!--l. 337--><p class="indent" >   Signals can take parameters as methods can (although they cannot return anything). For
+the reflection to work, a Signal declare a single constructor of the correct type. The
+constructor must take the object path they are being emitted from as their first
+(String) argument, followed by the other parameters in order. They must also call the
+superclass constructor with the same parameters. A full definition of a signal can
+be seen in figure&#x00A0;<a 
+href="#x17-170035">5<!--tex4ht:ref: fig:signal --></a>. Again, more complicated definitions are available in the test
+classes<span class="footnote-mark"><a 
+href="dbus-java19.html#fn11x0"><sup class="textsuperscript">11</sup></a></span><a 
+ id="x17-17002f11"></a> .
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x17-170035"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 348--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;org.freedesktop;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusInterface;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.DBusSignal;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.exceptions.DBusException;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;interface&#x00A0;DBus&#x00A0;extends&#x00A0;DBusInterface
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;class&#x00A0;NameAcquired&#x00A0;extends&#x00A0;DBusSignal
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;final&#x00A0;String&#x00A0;name;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;public&#x00A0;NameAcquired(String&#x00A0;path,&#x00A0;String&#x00A0;name)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;throws&#x00A0;DBusException
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;super(path,&#x00A0;name);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;this.name&#x00A0;=&#x00A0;name;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 368--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;5: </td><td  
+class="content">A Signal with one parameter</td></tr></table><!--tex4ht:label?: x17-170035 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+                                                                                      
+                                                                                      
+   <!--l. 374--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase3.html" >prev</a>] [<a 
+href="dbus-javase3.html#taildbus-javase3.html" >prev-tail</a>] [<a 
+href="dbus-javase4.html" >front</a>] [<a 
+href="dbus-java.html#dbus-javase13.html" >up</a>] </p></div>
+<!--l. 374--><p class="indent" >   <a 
+ id="taildbus-javase4.html"></a> </p> 
+</body></html> 

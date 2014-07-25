@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Debugging</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 891--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase10.html" >prev</a>] [<a 
+href="dbus-javase10.html#taildbus-javase10.html" >prev-tail</a>] [<a 
+href="#taildbus-javase11.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">11   </span> <a 
+ id="x35-3700011"></a>Debugging</h3>
+<!--l. 893--><p class="noindent" >It is possible to enable debugging in the library. This will be a lot slower, but can print a lot of
+useful information for debugging your program.
+</p><!--l. 896--><p class="indent" >   To enable a debug build compile with <span 
+class="cmtt-12">DEBUG=enable</span>. This will then need to be enabled at
+runtime by using the debug jar with debugging enabled (usually installed as debug-enable.jar
+alongside the normal jar).
+</p><!--l. 900--><p class="indent" >   Running a program which uses this library will print some informative messages. More
+verbose debug information can be got by supplying a custom debug configuration file. This
+should be placed in the file <span 
+class="cmtt-12">debug.conf </span>and has the format:
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+classname&#x00A0;=&#x00A0;LEVEL
+</div>
+<!--l. 907--><p class="nopar" >
+</p><!--l. 909--><p class="indent" >   Where <span 
+class="cmtt-12">classname </span>is either the special word <span 
+class="cmtt-12">ALL </span>or a full class name like
+<span 
+class="cmtt-12">org.freedesktop.dbus </span>and <span 
+class="cmtt-12">LEVEL </span>is one of <span 
+class="cmtt-12">NONE</span>, <span 
+class="cmtt-12">CRIT</span>, <span 
+class="cmtt-12">ERR</span>, <span 
+class="cmtt-12">WARN</span>, <span 
+class="cmtt-12">INFO</span>, <span 
+class="cmtt-12">DEBUG</span>, <span 
+class="cmtt-12">VERBOSE</span>,
+<span 
+class="cmtt-12">YES</span>, <span 
+class="cmtt-12">ALL </span>or <span 
+class="cmtt-12">TRUE</span>. This will set the debug level for a particular class. Any messages from
+that class at that level or higher will be printed. Verbose debugging is extremely
+verbose.
+</p><!--l. 916--><p class="indent" >   In addition, setting the environment variable <span 
+class="cmtt-12">DBUS</span><span 
+class="cmtt-12">_JAVA</span><span 
+class="cmtt-12">_EXCEPTION</span><span 
+class="cmtt-12">_DEBUG </span>will
+cause all exceptions which are handled internally to have their stack trace printed
+when they are handled. This will happen unless debugging has been disabled for that
+class.
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 921--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase10.html" >prev</a>] [<a 
+href="dbus-javase10.html#taildbus-javase10.html" >prev-tail</a>] [<a 
+href="dbus-javase11.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 921--><p class="indent" >   <a 
+ id="taildbus-javase11.html"></a> </p> 
+</body></html> 

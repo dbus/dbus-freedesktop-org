@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>DBusExecutionException</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 374--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase4.html" >prev</a>] [<a 
+href="dbus-javase4.html#taildbus-javase4.html" >prev-tail</a>] [<a 
+href="dbus-javase2.html#taildbus-javase5.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x20-180005"></a>DBusExecutionException</h3>
+<!--l. 376--><p class="noindent" >If you wish to report an error condition in a method call you can throw an instance of
+<span 
+class="cmtt-12">DBusExecutionException</span><span class="footnote-mark"><a 
+href="dbus-java21.html#fn12x0"><sup class="textsuperscript">12</sup></a></span><a 
+ id="x20-18001f12"></a> .
+This will be sent back to the caller as an error message, and the error name is taken from the
+class name of the exception. For example, if you wanted to report an unknown method you
+would define an exception as in figure <a 
+href="#x20-180026">6<!--tex4ht:ref: fig:exceptiondef --></a> and then throw it in your method as in figure
+<a 
+href="#x20-180037">7<!--tex4ht:ref: fig:exceptioncall --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x20-180026"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 386--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+package&#x00A0;org.freedesktop.DBus.Error;
+&#x00A0;<br />import&#x00A0;org.freedesktop.dbus.exceptions.DBusExecutionException;
+&#x00A0;<br />
+&#x00A0;<br />public&#x00A0;class&#x00A0;UnknownMethod&#x00A0;extends&#x00A0;DBusExecutionException
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;public&#x00A0;UnknownMethod(String&#x00A0;message)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;super(message);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />}
+</div>
+<!--l. 398--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;6: </td><td  
+class="content">An Exception</td></tr></table><!--tex4ht:label?: x20-180026 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x20-180037"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 405--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+...
+&#x00A0;<br />public&#x00A0;void&#x00A0;throwme()&#x00A0;throws&#x00A0;org.freedesktop.DBus.Error.UnknownMethod
+&#x00A0;<br />{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;throw&#x00A0;new&#x00A0;org.freedesktop.DBus.Error.UnknownMethod("hi");
+&#x00A0;<br />}
+&#x00A0;<br />...
+</div>
+<!--l. 413--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;7: </td><td  
+class="content">Throwing An Exception</td></tr></table><!--tex4ht:label?: x20-180037 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 419--><p class="indent" >   If you are calling a remote method and you want to handle such an error you can simply
+catch the exception as in figure <a 
+href="#x20-180048">8<!--tex4ht:ref: fig:exceptioncatch --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x20-180048"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 423--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+...
+&#x00A0;<br />try&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;remote.throwme();
+&#x00A0;<br />}&#x00A0;catch&#x00A0;(org.freedesktop.DBus.Error.UnknownMethod&#x00A0;UM)&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...
+&#x00A0;<br />}
+&#x00A0;<br />...
+</div>
+<!--l. 432--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;8: </td><td  
+class="content">Catching An Exception</td></tr></table><!--tex4ht:label?: x20-180048 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+                                                                                      
+                                                                                      
+   <!--l. 438--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase4.html" >prev</a>] [<a 
+href="dbus-javase4.html#taildbus-javase4.html" >prev-tail</a>] [<a 
+href="dbus-javase5.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 438--><p class="indent" >   <a 
+ id="taildbus-javase5.html"></a> </p> 
+</body></html> 

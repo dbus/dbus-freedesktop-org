@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Low-level API</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 992--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase12.html" >prev</a>] [<a 
+href="dbus-javase12.html#taildbus-javase12.html" >prev-tail</a>] [<a 
+href="dbus-javase4.html#taildbus-javase13.html">tail</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">13   </span> <a 
+ id="x38-4100013"></a>Low-level API</h3>
+<!--l. 994--><p class="noindent" >In very rare circumstances it may be neccessary to deal directly with messages on the bus,
+rather than with objects and method calls. This implementation gives the programmer access
+to this low-level API but its use is strongly recommended against.
+</p><!--l. 999--><p class="indent" >   To use the low-level API you use a different set of classes than with the normal
+API.
+</p><!--l. 1002--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">13.1   </span> <a 
+ id="x38-4200013.1"></a>Transport</h4>
+<!--l. 1004--><p class="noindent" >The <span 
+class="cmtt-12">Transport</span><span class="footnote-mark"><a 
+href="dbus-java39.html#fn22x0"><sup class="textsuperscript">22</sup></a></span><a 
+ id="x38-42001f22"></a> 
+class is used to connect to the underlying transport with a bus address and to send and receive
+messages.
+</p><!--l. 1008--><p class="indent" >   You connect by either creating a <span 
+class="cmtt-12">Transport </span>object with the bus address as the parameter,
+or by calling <span 
+class="cmtt-12">connect </span>with the address later. Addresses are represented using the <span 
+class="cmtt-12">BusAddress</span>
+class.
+</p><!--l. 1012--><p class="indent" >   Messages can be read by calling <span 
+class="cmtt-12">transport.min.readMessage() </span>and written by using the
+<span 
+class="cmtt-12">transport.mout.writeMessage(m) </span>methods.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">13.2   </span> <a 
+ id="x38-4300013.2"></a>Message</h4>
+<!--l. 1017--><p class="noindent" ><span 
+class="cmtt-12">Message</span><span class="footnote-mark"><a 
+href="dbus-java40.html#fn23x0"><sup class="textsuperscript">23</sup></a></span><a 
+ id="x38-43001f23"></a> 
+is the superclass of all the classes representing a message. To send a message you need to create
+a subclass of this object. Possible message types are: <span 
+class="cmtt-12">MethodCall</span>, <span 
+class="cmtt-12">MethodReturn</span>, <span 
+class="cmtt-12">Error </span>and
+<span 
+class="cmtt-12">DBusSignal</span>. Constructors for these vary, but they are basically similar to the <span 
+class="cmtt-12">MethodCall</span>
+class.
+</p><!--l. 1023--><p class="indent" >   All the constructors have variadic parameter lists with the last of the parameters being the
+signature of the message body and the parameters which make up the body. If the message has
+an empty body then the last parameter must be null. Reading and writing messages is not
+thread safe.
+                                                                                      
+                                                                                      
+</p><!--l. 1028--><p class="indent" >   Messages can be read either in blocking or non-blocking mode. When reading a message in
+non-blocking mode, if a full message has not yet been read from the transport the method will
+return null. Messages are instantiated as the correct message type, so <span 
+class="cmtt-12">instanceof </span>will work on
+the returned object. Blocking mode can be enabled with an extra parameter to the Transport
+constructor.
+</p><!--l. 1034--><p class="indent" >   Figure <a 
+href="#x38-4300220">20<!--tex4ht:ref: fig:lowlevel --></a> shows how to connect to a bus, send the (required) initial &#8216;Hello&#8217; message and call
+a method with two parameters.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x38-4300220"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 1039--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+BusAddress&#x00A0;address&#x00A0;=&#x00A0;new&#x00A0;BusAddress(
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;System.getenv("DBUS_SESSION_BUS_ADDRESS"));
+&#x00A0;<br />Transport&#x00A0;conn&#x00A0;=&#x00A0;new&#x00A0;Transport(address,&#x00A0;true);
+&#x00A0;<br />
+&#x00A0;<br />Message&#x00A0;m&#x00A0;=&#x00A0;new&#x00A0;MethodCall("org.freedesktop.DBus",&#x00A0;"/org/freedesktop/DBus",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"org.freedesktop.&#x00A0;DBus",&#x00A0;"Hello",&#x00A0;(byte)&#x00A0;0,&#x00A0;null);
+&#x00A0;<br />conn.mout.writeMessage(m);
+&#x00A0;<br />
+&#x00A0;<br />m&#x00A0;=&#x00A0;conn.min.readMessage();
+&#x00A0;<br />System.out.println("Response&#x00A0;to&#x00A0;Hello&#x00A0;is:&#x00A0;"+m);
+&#x00A0;<br />
+&#x00A0;<br />m&#x00A0;=&#x00A0;new&#x00A0;MethodCall("org.freedesktop.DBus",&#x00A0;"/org/freedesktop/DBus",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"org.freedesktop.DBus",&#x00A0;"RequestName",&#x00A0;(byte)&#x00A0;0,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"su",&#x00A0;"org.testname",&#x00A0;0);
+&#x00A0;<br />conn.mout.writeMessage(m);
+&#x00A0;<br />
+&#x00A0;<br />conn.disconnect();
+</div>
+<!--l. 1058--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;20: </td><td  
+class="content">Low-level usage</td></tr></table><!--tex4ht:label?: x38-4300220 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+                                                                                      
+                                                                                      
+   <!--l. 1064--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase12.html" >prev</a>] [<a 
+href="dbus-javase12.html#taildbus-javase12.html" >prev-tail</a>] [<a 
+href="dbus-javase13.html" >front</a>] [<a 
+href="dbus-java.html# " >up</a>] </p></div>
+<!--l. 1064--><p class="indent" >   <a 
+ id="taildbus-javase13.html"></a>  </p> 
+</body></html> 

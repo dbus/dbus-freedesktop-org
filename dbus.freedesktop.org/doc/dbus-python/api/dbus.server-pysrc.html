@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dbus.server</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="dbus-module.html">Package&nbsp;dbus</a> ::
+        Module&nbsp;server
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dbus.server-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="dbus.server-module.html">Module dbus.server</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2008 Openismus GmbH &lt;http://openismus.com/&gt;</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2008 Collabora Ltd. &lt;http://www.collabora.co.uk/&gt;</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Permission is hereby granted, free of charge, to any person</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># obtaining a copy of this software and associated documentation</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># files (the "Software"), to deal in the Software without</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># restriction, including without limitation the rights to use, copy,</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># modify, merge, publish, distribute, sublicense, and/or sell copies</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># of the Software, and to permit persons to whom the Software is</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># furnished to do so, subject to the following conditions:</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># The above copyright notice and this permission notice shall be</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># included in all copies or substantial portions of the Software.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"># EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"># NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"># HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"># WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"># DEALINGS IN THE SOFTWARE.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-name">__all__</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'Server'</tt><tt class="py-op">,</tt> <tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">'reStructuredText'</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_dbus_bindings</tt> <tt class="py-keyword">import</tt> <tt class="py-name">_Server</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package dbus=dbus-module.html"><a title="dbus" class="py-name" href="#" onclick="return doclink('link-0', 'dbus', 'link-0');">dbus</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module dbus.connection=dbus.connection-module.html,Variable dbus.service.Object.connection=dbus.service.Object-class.html#connection"><a title="dbus.connection
+dbus.service.Object.connection" class="py-name" href="#" onclick="return doclink('link-1', 'connection', 'link-1');">connection</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class dbus.connection.Connection=dbus.connection.Connection-class.html"><a title="dbus.connection.Connection" class="py-name" href="#" onclick="return doclink('link-2', 'Connection', 'link-2');">Connection</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="Server"></a><div id="Server-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="Server-toggle" onclick="return toggle('Server');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="dbus.server.Server-class.html">Server</a><tt class="py-op">(</tt><tt class="py-base-class">_Server</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Server-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-docstring">"""An opaque object representing a server that listens for connections from</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    other applications.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    This class is not useful to instantiate directly: you must subclass it and</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">    either extend the method connection_added, or append to the</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">    list on_connection_added.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">    :Since: 0.83</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="Server.__new__"></a><div id="Server.__new__-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="Server.__new__-toggle" onclick="return toggle('Server.__new__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dbus.server.Server-class.html#__new__">__new__</a><tt class="py-op">(</tt><tt class="py-param">cls</tt><tt class="py-op">,</tt> <tt class="py-param">address</tt><tt class="py-op">,</tt> <tt class="py-param">connection_class</tt><tt class="py-op">=</tt><tt id="link-3" class="py-name"><a title="dbus.connection.Connection" class="py-name" href="#" onclick="return doclink('link-3', 'Connection', 'link-2');">Connection</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-param">mainloop</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">auth_mechanisms</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server.__new__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Server.__new__-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-docstring">"""Construct a new Server.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        :Parameters:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">            `address` : str</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">                Listen on this address.</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">            `connection_class` : type</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">                When new connections come in, instantiate this subclass</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">                of dbus.connection.Connection to represent them.</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">                The default is Connection.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">            `mainloop` : dbus.mainloop.NativeMainLoop or None</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">                The main loop with which to associate the new connections.</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">            `auth_mechanisms` : sequence of str</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">                Authentication mechanisms to allow. The default is to allow</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">                any authentication mechanism supported by ``libdbus``.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Class dbus.server.Server=dbus.server.Server-class.html"><a title="dbus.server.Server" class="py-name" href="#" onclick="return doclink('link-4', 'Server', 'link-4');">Server</a></tt><tt class="py-op">,</tt> <tt class="py-name">cls</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method dbus.Array.__new__()=dbus.Array-class.html#__new__,Method dbus.Boolean.__new__()=dbus.Boolean-class.html#__new__,Method dbus.Byte.__new__()=dbus.Byte-class.html#__new__,Method dbus.Dictionary.__new__()=dbus.Dictionary-class.html#__new__,Method dbus.Int16.__new__()=dbus.Int16-class.html#__new__,Method dbus.Int32.__new__()=dbus.Int32-class.html#__new__,Method dbus.Int64.__new__()=dbus.Int64-class.html#__new__,Method dbus.ObjectPath.__new__()=dbus.ObjectPath-class.html#__new__,Method dbus.Signature.__new__()=dbus.Signature-class.html#__new__,Method dbus.String.__new__()=dbus.String-class.html#__new__,Method dbus.Struct.__new__()=dbus.Struct-class.html#__new__,Method dbus.UInt16.__new__()=dbus.UInt16-class.html#__new__,Method dbus.UInt32.__new__()=dbus.UInt32-class.html#__new__,Method dbus.UInt64.__new__()=dbus.UInt64-class.html#__new__,Method dbus.UTF8String.__new__()=dbus.UTF8String-class.html#__new__,Static Method dbus._dbus.Bus.__new__()=dbus._dbus.Bus-class.html#__new__,Static Method dbus._dbus.SessionBus.__new__()=dbus._dbus.SessionBus-class.html#__new__,Static Method dbus._dbus.StarterBus.__new__()=dbus._dbus.StarterBus-class.html#__new__,Static Method dbus._dbus.SystemBus.__new__()=dbus._dbus.SystemBus-class.html#__new__,Static Method dbus.bus.BusConnection.__new__()=dbus.bus.BusConnection-class.html#__new__,Method dbus.lowlevel.Message.__new__()=dbus.lowlevel.Message-class.html#__new__,Static Method dbus.server.Server.__new__()=dbus.server.Server-class.html#__new__,Static Method dbus.service.BusName.__new__()=dbus.service.BusName-class.html#__new__,Method dbus.types.UnixFd.__new__()=dbus.types.UnixFd-class.html#__new__"><a title="dbus.Array.__new__
+dbus.Boolean.__new__
+dbus.Byte.__new__
+dbus.Dictionary.__new__
+dbus.Int16.__new__
+dbus.Int32.__new__
+dbus.Int64.__new__
+dbus.ObjectPath.__new__
+dbus.Signature.__new__
+dbus.String.__new__
+dbus.Struct.__new__
+dbus.UInt16.__new__
+dbus.UInt32.__new__
+dbus.UInt64.__new__
+dbus.UTF8String.__new__
+dbus._dbus.Bus.__new__
+dbus._dbus.SessionBus.__new__
+dbus._dbus.StarterBus.__new__
+dbus._dbus.SystemBus.__new__
+dbus.bus.BusConnection.__new__
+dbus.lowlevel.Message.__new__
+dbus.server.Server.__new__
+dbus.service.BusName.__new__
+dbus.types.UnixFd.__new__" class="py-name" href="#" onclick="return doclink('link-5', '__new__', 'link-5');">__new__</a></tt><tt class="py-op">(</tt><tt class="py-name">cls</tt><tt class="py-op">,</tt> <tt id="link-6" class="py-name" targets="Variable dbus.server.Server.address=dbus.server.Server-class.html#address"><a title="dbus.server.Server.address" class="py-name" href="#" onclick="return doclink('link-6', 'address', 'link-6');">address</a></tt><tt class="py-op">,</tt> <tt class="py-name">connection_class</tt><tt class="py-op">,</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt id="link-7" class="py-name" targets="Package dbus.mainloop=dbus.mainloop-module.html"><a title="dbus.mainloop" class="py-name" href="#" onclick="return doclink('link-7', 'mainloop', 'link-7');">mainloop</a></tt><tt class="py-op">,</tt> <tt class="py-name">auth_mechanisms</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="Server.__init__"></a><div id="Server.__init__-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="Server.__init__-toggle" onclick="return toggle('Server.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dbus.server.Server-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Server.__init__-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__connections</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_added</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-string">"""A list of callbacks to invoke when a connection is added.</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">        They receive two arguments: this Server and the new Connection."""</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_removed</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-string">"""A list of callbacks to invoke when a connection becomes</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string">        disconnected. They receive two arguments: this Server and the removed</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string">        Connection."""</tt> </tt>
+</div><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-comment"># This method name is hard-coded in _dbus_bindings._Server.</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-comment"># This is not public API.</tt> </tt>
+<a name="Server._on_new_connection"></a><div id="Server._on_new_connection-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="Server._on_new_connection-toggle" onclick="return toggle('Server._on_new_connection');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dbus.server.Server-class.html#_on_new_connection">_on_new_connection</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">conn</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server._on_new_connection-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Server._on_new_connection-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">conn</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method dbus.connection.Connection.call_on_disconnection()=dbus.connection.Connection-class.html#call_on_disconnection"><a title="dbus.connection.Connection.call_on_disconnection" class="py-name" href="#" onclick="return doclink('link-8', 'call_on_disconnection', 'link-8');">call_on_disconnection</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method dbus.server.Server.connection_removed()=dbus.server.Server-class.html#connection_removed"><a title="dbus.server.Server.connection_removed" class="py-name" href="#" onclick="return doclink('link-9', 'connection_removed', 'link-9');">connection_removed</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method dbus.server.Server.connection_added()=dbus.server.Server-class.html#connection_added"><a title="dbus.server.Server.connection_added" class="py-name" href="#" onclick="return doclink('link-10', 'connection_added', 'link-10');">connection_added</a></tt><tt class="py-op">(</tt><tt class="py-name">conn</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="Server.connection_added"></a><div id="Server.connection_added-def"><a name="L80"></a><tt class="py-lineno"> 80</tt> <a class="py-toggle" href="#" id="Server.connection_added-toggle" onclick="return toggle('Server.connection_added');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dbus.server.Server-class.html#connection_added">connection_added</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">conn</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server.connection_added-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Server.connection_added-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-docstring">"""Respond to the creation of a new Connection.</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        This base-class implementation just invokes the callbacks in</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        the on_connection_added attribute.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        :Parameters:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">            `conn` : dbus.connection.Connection</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">                A D-Bus connection which has just been added.</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">                The type of this parameter is whatever was passed</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">                to the Server constructor as the ``connection_class``.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_added</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">cb</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_added</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-name">cb</tt><tt class="py-op">(</tt><tt class="py-name">conn</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="Server.connection_removed"></a><div id="Server.connection_removed-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="Server.connection_removed-toggle" onclick="return toggle('Server.connection_removed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="dbus.server.Server-class.html#connection_removed">connection_removed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">conn</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Server.connection_removed-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Server.connection_removed-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-docstring">"""Respond to the disconnection of a Connection.</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        This base-class implementation just invokes the callbacks in</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        the on_connection_removed attribute.</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        :Parameters:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">            `conn` : dbus.connection.Connection</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">                A D-Bus connection which has just become disconnected.</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">                The type of this parameter is whatever was passed</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">                to the Server constructor as the ``connection_class``.</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_removed</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">cb</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">on_connection_removed</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">cb</tt><tt class="py-op">(</tt><tt class="py-name">conn</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt id="link-11" class="py-name"><a title="dbus.server.Server.address" class="py-name" href="#" onclick="return doclink('link-11', 'address', 'link-6');">address</a></tt>      <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt class="py-name">_Server</tt><tt class="py-op">.</tt><tt class="py-name">get_address</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt id="link-12" class="py-name" targets="Variable dbus.server.Server.id=dbus.server.Server-class.html#id"><a title="dbus.server.Server.id" class="py-name" href="#" onclick="return doclink('link-12', 'id', 'link-12');">id</a></tt>           <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt class="py-name">_Server</tt><tt class="py-op">.</tt><tt class="py-name">get_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt id="link-13" class="py-name" targets="Variable dbus.server.Server.is_connected=dbus.server.Server-class.html#is_connected"><a title="dbus.server.Server.is_connected" class="py-name" href="#" onclick="return doclink('link-13', 'is_connected', 'link-13');">is_connected</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt class="py-name">_Server</tt><tt class="py-op">.</tt><tt class="py-name">get_is_connected</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="dbus-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Feb  1 10:06:29 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dbus</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;dbus
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dbus-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package dbus</h1><p class="nomargin-top"><span class="codelink"><a href="dbus-pysrc.html">source&nbsp;code</a></span></p>
+<p>Implements the public API for a D-Bus client. See the dbus.service module
+to export objects or claim well-known names.</p>
+<!-- for epydoc's benefit -->
+
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Submodules</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Submodules"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="dbus._compat-module.html" onclick="show_private();">dbus._compat</a></strong>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus._dbus-module.html" onclick="show_private();">dbus._dbus</a></strong>: <em class="summary">Implementation for dbus.Bus. Not to be imported directly.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus._expat_introspect_parser-module.html" onclick="show_private();">dbus._expat_introspect_parser</a></strong>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.bus-module.html" onclick="show_private();">dbus.bus</a></strong>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.connection-module.html" onclick="show_private();">dbus.connection</a></strong>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.decorators-module.html" onclick="show_private();">dbus.decorators</a></strong>: <em class="summary">Service-side D-Bus decorators.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.exceptions-module.html" onclick="show_private();">dbus.exceptions</a></strong>: <em class="summary">D-Bus exceptions.</em>    </li>
+    <li> <strong class="uidlink"><a href="dbus.glib-module.html">dbus.glib</a></strong>: <em class="summary">Deprecated module which sets the default GLib main context as the mainloop
+implementation within D-Bus, as a side-effect of being imported!</em>    </li>
+    <li> <strong class="uidlink"><a href="dbus.gobject_service-module.html">dbus.gobject_service</a></strong>: <em class="summary">Support code for implementing D-Bus services via GObjects.</em>    </li>
+    <li> <strong class="uidlink"><a href="dbus.lowlevel-module.html">dbus.lowlevel</a></strong>: <em class="summary">Low-level interface to D-Bus.</em>    </li>
+    <li> <strong class="uidlink"><a href="dbus.mainloop-module.html">dbus.mainloop</a></strong>: <em class="summary">Base definitions, etc. for main loop integration.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="dbus.mainloop.glib-module.html">dbus.mainloop.glib</a></strong>: <em class="summary">GLib main loop integration using libdbus-glib.</em>    </li>
+    </ul>
+    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.proxies-module.html" onclick="show_private();">dbus.proxies</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="dbus.server-module.html">dbus.server</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="dbus.service-module.html">dbus.service</a></strong>    </li>
+    <li class="private"> <strong class="uidlink"><a href="dbus.types-module.html" onclick="show_private();">dbus.types</a></strong>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.DBusException-class.html" class="summary-name">DBusException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.IntrospectionParserException-class.html" class="summary-name">IntrospectionParserException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.MissingErrorHandlerException-class.html" class="summary-name">MissingErrorHandlerException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.MissingReplyHandlerException-class.html" class="summary-name">MissingReplyHandlerException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.NameExistsException-class.html" class="summary-name">NameExistsException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.UnknownMethodException-class.html" class="summary-name">UnknownMethodException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.exceptions.ValidationException-class.html" class="summary-name">ValidationException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Array-class.html" class="summary-name">Array</a><br />
+      An array of similar items, implemented as a subtype of list.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Boolean-class.html" class="summary-name">Boolean</a><br />
+      A boolean, represented as a subtype of <code class="link">int</code> (not <code class="link">bool</code>, because <code class="link">bool</code>
+cannot be subclassed).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Byte-class.html" class="summary-name">Byte</a><br />
+      An unsigned byte: a subtype of int, with range restricted to [0, 255].
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.ByteArray-class.html" class="summary-name">ByteArray</a><br />
+      ByteArray is a subtype of str which can be used when you want an
+efficient immutable representation of a D-Bus byte array (signature 'ay').
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Dictionary-class.html" class="summary-name">Dictionary</a><br />
+      An mapping whose keys are similar and whose values are similar,
+implemented as a subtype of dict.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Double-class.html" class="summary-name">Double</a><br />
+      A double-precision floating point number (a subtype of float).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Int16-class.html" class="summary-name">Int16</a><br />
+      A signed 16-bit integer between -0x8000 and +0x7FFF, represented as
+a subtype of <code class="link">int</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Int32-class.html" class="summary-name">Int32</a><br />
+      A signed 32-bit integer between -0x8000 0000 and +0x7FFF FFFF, represented as
+a subtype of <code class="link">int</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Int64-class.html" class="summary-name">Int64</a><br />
+      A signed 64-bit integer between -0x8000 0000 0000 0000 and
++0x7FFF FFFF FFFF FFFF, represented as a subtype of <code class="link">long</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.ObjectPath-class.html" class="summary-name">ObjectPath</a><br />
+      A D-Bus object path, such as '/com/example/MyApp/Documents/abc'.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Signature-class.html" class="summary-name">Signature</a><br />
+      A string subclass whose values are restricted to valid D-Bus
+signatures. When iterated over, instead of individual characters it
+produces Signature instances representing single complete types.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.String-class.html" class="summary-name">String</a><br />
+      A string represented using Unicode - a subtype of <code class="link">unicode</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.Struct-class.html" class="summary-name">Struct</a><br />
+      An structure containing items of possibly distinct types.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.UInt16-class.html" class="summary-name">UInt16</a><br />
+      An unsigned 16-bit integer between 0 and 0xFFFF, represented as
+a subtype of <code class="link">int</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.UInt32-class.html" class="summary-name">UInt32</a><br />
+      An unsigned 32-bit integer between 0 and 0xFFFF FFFF, represented as a
+subtype of <code class="link">long</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.UInt64-class.html" class="summary-name">UInt64</a><br />
+      An unsigned 64-bit integer between 0 and 0xFFFF FFFF FFFF FFFF,
+represented as a subtype of <code class="link">long</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.UTF8String-class.html" class="summary-name">UTF8String</a><br />
+      A string represented using UTF-8 - a subtype of <code class="link">str</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus._dbus.Bus-class.html" class="summary-name">Bus</a><br />
+      A connection to one of three possible standard buses, the SESSION,
+SYSTEM, or STARTER bus. This class manages shared connections to those
+buses.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus._dbus.SystemBus-class.html" class="summary-name">SystemBus</a><br />
+      The system-wide message bus.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus._dbus.SessionBus-class.html" class="summary-name">SessionBus</a><br />
+      The session (current login) message bus.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus._dbus.StarterBus-class.html" class="summary-name">StarterBus</a><br />
+      The bus that activated this process (only valid if
+this process was launched by DBus activation).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dbus.proxies.Interface-class.html" class="summary-name">Interface</a><br />
+      An interface into a remote object.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">object</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#get_default_main_loop" class="summary-sig-name">get_default_main_loop</a>()</span><br />
+      Return the global default dbus-python main loop wrapper, which is used
+when no main loop wrapper is passed to the Connection constructor.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#set_default_main_loop" class="summary-sig-name">set_default_main_loop</a>(<span class="summary-sig-arg">object</span>)</span><br />
+      Change the global default dbus-python main loop wrapper, which is used
+when no main loop wrapper is passed to the Connection constructor.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#validate_bus_name" class="summary-sig-name">validate_bus_name</a>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">allow_unique</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">allow_well_known</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Raise ValueError if the argument is not a valid bus name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#validate_error_name" class="summary-sig-name">validate_error_name</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      Raise ValueError if the given string is not a valid error name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#validate_interface_name" class="summary-sig-name">validate_interface_name</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      Raise ValueError if the given string is not a valid interface name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#validate_member_name" class="summary-sig-name">validate_member_name</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      Raise ValueError if the argument is not a valid member (signal or method) name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="dbus-module.html#validate_object_path" class="summary-sig-name">validate_object_path</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      Raise ValueError if the given string is not a valid object path.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="BUS_DAEMON_IFACE"></a><span class="summary-name">BUS_DAEMON_IFACE</span> = <code title="'org.freedesktop.DBus'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="BUS_DAEMON_NAME"></a><span class="summary-name">BUS_DAEMON_NAME</span> = <code title="'org.freedesktop.DBus'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="BUS_DAEMON_PATH"></a><span class="summary-name">BUS_DAEMON_PATH</span> = <code title="'/org/freedesktop/DBus'"><code class="variable-quote">'</code><code class="variable-string">/org/freedesktop/DBus</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="INTROSPECTABLE_IFACE"></a><span class="summary-name">INTROSPECTABLE_IFACE</span> = <code title="'org.freedesktop.DBus.Introspectable'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus.Introspectable</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LOCAL_IFACE"></a><span class="summary-name">LOCAL_IFACE</span> = <code title="'org.freedesktop.DBus.Local'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus.Local</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LOCAL_PATH"></a><span class="summary-name">LOCAL_PATH</span> = <code title="'/org/freedesktop/DBus/Local'"><code class="variable-quote">'</code><code class="variable-string">/org/freedesktop/DBus/Local</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PEER_IFACE"></a><span class="summary-name">PEER_IFACE</span> = <code title="'org.freedesktop.DBus.Peer'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus.Peer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PROPERTIES_IFACE"></a><span class="summary-name">PROPERTIES_IFACE</span> = <code title="'org.freedesktop.DBus.Properties'"><code class="variable-quote">'</code><code class="variable-string">org.freedesktop.DBus.Properties</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'dbus'"><code class="variable-quote">'</code><code class="variable-string">dbus</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_default_main_loop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_default_main_loop</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the global default dbus-python main loop wrapper, which is used
+when no main loop wrapper is passed to the Connection constructor.</p>
+<p>If None, there is no default and you should always pass the mainloop
+parameter to the constructor - if you don't, then asynchronous calls,
+connecting to signals and exporting objects will raise an exception.
+There is no default until set_default_main_loop is called.</p>
+  <dl class="fields">
+    <dt>Returns: object</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_default_main_loop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_default_main_loop</span>(<span class="sig-arg">object</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Change the global default dbus-python main loop wrapper, which is used
+when no main loop wrapper is passed to the Connection constructor.</p>
+<p>If None, return to the initial situation: there is no default, and you
+must always pass the mainloop parameter to the constructor.</p>
+<p>Two types of main loop wrapper are planned in dbus-python.
+Native main-loop wrappers are instances of <a href="dbus.mainloop.NativeMainLoop-class.html" class="link">dbus.mainloop.NativeMainLoop</a>
+supplied by extension modules like <a href="dbus.mainloop.glib-module.html" class="link">dbus.mainloop.glib</a>: they have no
+Python API, but connect themselves to <tt class="rst-docutils literal">libdbus</tt> using native code.
+Python main-loop wrappers are not yet implemented. They will be objects
+supporting the interface defined by <code class="link">dbus.mainloop.MainLoop</code>, with an
+API entirely based on Python methods.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="validate_bus_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">validate_bus_name</span>(<span class="sig-arg">name</span>,
+        <span class="sig-arg">allow_unique</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">allow_well_known</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Raise ValueError if the argument is not a valid bus name.</p>
+<p>By default both unique and well-known names are accepted.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (str) - The name to be validated</li>
+        <li><strong class="pname"><code>allow_unique</code></strong> (bool) - If False, unique names of the form :1.123 will be rejected</li>
+        <li><strong class="pname"><code>allow_well_known</code></strong> (bool) - If False, well-known names of the form com.example.Foo
+will be rejected</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80
+      </p>
+</div></td></tr></table>
+</div>
+<a name="validate_error_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">validate_error_name</span>(<span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  Raise ValueError if the given string is not a valid error name.
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80
+      </p>
+</div></td></tr></table>
+</div>
+<a name="validate_interface_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">validate_interface_name</span>(<span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  Raise ValueError if the given string is not a valid interface name.
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80
+      </p>
+</div></td></tr></table>
+</div>
+<a name="validate_member_name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">validate_member_name</span>(<span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  Raise ValueError if the argument is not a valid member (signal or method) name.
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80
+      </p>
+</div></td></tr></table>
+</div>
+<a name="validate_object_path"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">validate_object_path</span>(<span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  Raise ValueError if the given string is not a valid object path.
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Since:</strong>
+        0.80
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Feb  1 10:06:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

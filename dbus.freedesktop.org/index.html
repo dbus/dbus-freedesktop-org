@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>dbus</title>
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../xorg.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://secure.freedesktop.org/write/www/ikiwiki.cgi?page=Software%2Fdbus&amp;do=edit" />
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+<div class="pageheader">
+<div class="header">
+<span class="logo"><img src="../../logo.png" /></span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://www.freedesktop.org/wiki/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+   />
+ </div>
+</form>
+
+
+<span class="headerpath">
+<span class="parentlinks">
+
+<a href="../../">www</a>/ 
+
+<a href="../">Software</a>/ 
+
+</span>
+<span class="title">
+dbus
+
+</span>
+</span>
+</div>
+
+
+<span class="actions">
+<ul>
+
+<li><a href="https://secure.freedesktop.org/write/www/ikiwiki.cgi?page=Software%2Fdbus&amp;do=edit" rel="nofollow">Edit</a></li>
+
+
+
+<li><a href="https://secure.freedesktop.org/cgit/www/log/Software/dbus.mdwn">Page History</a></li>
+
+
+<li><a href="https://secure.freedesktop.org/cgit/www/">Repo Info</a></li>
+
+
+
+
+</ul>
+</span>
+
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<table class="mointable">
+        <tr>
+            <td><strong>Contents</strong>  </td>
+        </tr>
+        <tr>
+            <td><div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">What is D-Bus?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Mailing List</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Reporting Bugs & Sending Patches</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Documentation</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Download</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Windows port</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Grab the Source</a>
+	</li>
+</ol>
+</div>
+</td>
+        </tr>
+</table>
+
+<h1 id="whatisd-bus"><a name="index1h1"></a>What is D-Bus?</h1>
+
+<p>D-Bus is a message bus system, a simple way for applications to talk to one another. In addition to interprocess communication, D-Bus helps coordinate process lifecycle; it makes it simple and reliable to code a "single instance" application or daemon, and to launch applications and daemons on demand when their services are needed. </p>
+
+<p>D-Bus supplies both a system daemon (for events such as "new hardware device added" or "printer queue changed") and a per-user-login-session daemon (for general IPC needs among user applications). Also, the message bus is built on top of a general one-to-one message passing framework, which can be used by any two apps to communicate directly (without going through the message bus daemon). Currently the communicating applications are on one computer, or through unencrypted TCP/IP suitable for use behind a firewall with shared NFS home directories. (Help wanted with <a href="../DBusRemote/">better remote transports</a> - the transport mechanism is well-abstracted and extensible.) </p>
+
+<p>The D-Bus <a href="http://dbus.freedesktop.org/doc/api/html/index.html">low-level API reference implementation</a> and <a href="http://dbus.freedesktop.org/doc/dbus-specification.html">protocol</a> have been heavily tested in the real world over several years, and are now "set in stone." Future changes will either be compatible or versioned appropriately. </p>
+
+<p>The low-level libdbus reference implementation has no required dependencies; the bus daemon's only <em>required</em> dependency is an XML parser (expat). Higher-level bindings specific to particular frameworks (Qt, GLib, Java, C#, Python, etc.) add more dependencies, but can make more assumptions and are thus much simpler to use. The bindings evolve separately from the low-level libdbus, so some are more mature and ABI-stable than others; check the docs for the binding you plan to use. </p>
+
+<p>There are also some reimplementations of the D-Bus protocol for languages such as C#, Java, and Ruby. These do not use the libdbus reference implementation. </p>
+
+<p>It should be noted that the low-level implementation is not primarily designed for application authors to use. Rather, it is a basis for binding authors and a reference for reimplementations. If you are able to do so it is recommended that you use one of the higher level bindings or implementations. A list of these can be found on the <a href="../DBusBindings/">bindings page</a>. </p>
+
+<p>The <a href="../DbusProjects/">list of projects using D-Bus</a> is growing and they provide a wealth of examples of using the various APIs to learn from. </p>
+
+<p>D-Bus is very portable to any Linux or UNIX flavor, and a port to Windows is in progress. </p>
+
+<p>If you have any trouble with D-Bus or suggestions for improvement, bug reports and comments are very welcome. </p>
+
+<p>Get on D-Bus today! </p>
+
+<h1 id="mailinglist"><a name="index2h1"></a>Mailing List</h1>
+
+<p>All D-Bus discussion is currently on <a href="http://lists.freedesktop.org/mailman/listinfo/dbus/">dbus@lists.freedesktop.org</a>. </p>
+
+<h1 id="reportingbugssendingpatches"><a name="index3h1"></a>Reporting Bugs & Sending Patches</h1>
+
+<p>Please report bugs (and submit patches) through the freedesktop.org <a href="https://bugs.freedesktop.org/">Bugzilla</a>. </p>
+
+<p>Ideally, include test suite coverage with your patch; or if you report a bug, it's good to add a test that fails even if you don't have a patch otherwise. You can see test coverage stats in the GNOME build bot results, at <a href="http://build.gnome.org:8080/coverage/dbus/lcov/">http://build.gnome.org:8080/coverage/dbus/lcov/</a> (note, coverage is understated since it counts the test code itself in the coverage, and the test suite does not test itself, in particular all the "test failed" codepaths are not covered). </p>
+
+<p>Patches to improve test coverage are very welcome, though D-Bus is already among the best-covered codebases around. </p>
+
+<h1 id="documentation"><a name="index4h1"></a>Documentation</h1>
+
+<p>Some stuff from the doc/ subdirectory is prebuilt and browsable here. If you're new to D-Bus, the tutorial is probably the best place to start (even though it is very incomplete, the basics are covered). </p>
+
+<p>Generic D-Bus protocol information: </p>
+
+<ul>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-specification.html">D-Bus specification</a> </li>
+<li><a href="http://packages.python.org/txdbus/dbus_overview.html">D-Bus Overview</a> from the txdbus documentation </li>
+<li><a href="../../IntroductionToDBus/">An introduction to the basics</a> by Jeroen Vermeulen </li>
+<li><a href="http://doc.trolltech.com/4.2/intro-to-dbus.html">Introduction to D-Bus</a> from the Qt documentation </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-faq.html">FAQ</a> </li>
+<li>Overview picture <a href="http://dbus.freedesktop.org/doc/diagram.png">png</a> <a href="http://dbus.freedesktop.org/doc/diagram.svg">svg</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-tutorial.html">D-Bus tutorial (incomplete, has stuff on several bindings and reimplementations)</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/busconfig.dtd">Config file DTD</a> </li>
+<li>If you are confused about some of the concepts in DBus, look at <a href="../DBusAnalogy/">some analogies</a> </li>
+<li>Some <a href="../DbusTools/">tools</a> for working with D-Bus. 
+Please note that the D-Bus spec is incomplete, especially in its description of the message bus daemon. The spec for the protocol itself is reasonably complete, though not always clear or precise. Your patches are welcome! In the meantime, you may need to supplement your reading of the spec with a reading of the reference implementation source code. </li>
+</ul>
+
+<p>Docs specific to the reference implementation: </p>
+
+<ul>
+<li><a href="http://dbus.freedesktop.org/doc/api/html/index.html">API reference manual for the reference implementation (libdbus)</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus/api/html/todo.html">@todo items from reference implementation manual</a> and high-level <a href="http://dbus.freedesktop.org/doc/TODO">TODO</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus/api/html/files.html">Browse reference implementation source</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-daemon.1.html">dbus-daemon(1)</a> (includes configuration file docs) </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-send.1.html">dbus-send(1)</a> <a href="http://dbus.freedesktop.org/doc/dbus-monitor.1.html">dbus-monitor(1)</a> <a href="http://dbus.freedesktop.org/doc/dbus-launch.1.html">dbus-launch(1)</a> <a href="http://dbus.freedesktop.org/doc/dbus-uuidgen.1.html">dbus-uuidgen(1)</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/HACKING">HACKING</a> <a href="http://dbus.freedesktop.org/doc/AUTHORS">AUTHORS</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/NEWS">NEWS</a> <a href="http://dbus.freedesktop.org/doc/ChangeLog">ChangeLog</a> <a href="http://dbus.freedesktop.org/doc/README">README</a> </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus-test-plan.html">Test plan</a> </li>
+<li><a href="http://www.freedesktop.org/software/dbus/dbus-docs.tar.gz">Tarball</a> with most of the above docs. 
+Keep in mind that libdbus is a low-level library, intended to be the backend for a language binding and with extra complexity needed to implement dbus-daemon. You will save yourself a lot of pain if you use a higher-level wrapper or a reimplementation. Documentation of these is usually linked from the <a href="../DBusBindings/">bindings page</a>. </li>
+</ul>
+
+<p>Articles from around the web, including some tutorials: </p>
+
+<ul>
+<li><a href="http://www-128.ibm.com/developerworks/linux/library/l-dbus.html?ca=dgr-lnxw95D-BUS">"Connect desktop apps using D-BUS" (IBM developerWorks)</a> by Ross Burton (July 2004) </li>
+<li><a href="http://www.redhat.com/magazine/003jan05/features/dbus/">"Get on D-BUS" (Red Hat Magazine)</a> by John Palmieri (January 2005) </li>
+<li><a href="http://www.linuxjournal.com/article/7744">"Get on the D-BUS" (Linux Journal)</a> by Robert Love (January 2005) </li>
+<li><a href="http://raphael.slinckx.net/dbustutorial.php">"The DBus missing tutorial - DBus Activation"</a> by RaphaÃ«l Slinckx (2005) </li>
+<li><a href="http://dbus.freedesktop.org/doc/dbus/libdbus-tutorial.html">D-Bus Low-Level API Tutorial</a> by Matthew Johnson (Nov 2005) </li>
+<li><a href="http://techbase.kde.org/Development/Tutorials/D-Bus/Introduction">Introduction To D-BUS</a> by Aaron Seigo &amp; KDE community (2007) </li>
+<li><a href="http://wi.wu.ac.at/rgf/rexx/orx22/201112-DBus4ooRexx-article.pdf">"An Introduction to the D-Bus Language Binding for ooRexx"</a> by Rony G. Flatscher (December 2011, Intro to D-Bus concepts followed by intro to the ooRexx bindings) </li>
+</ul>
+
+<h1 id="download"><a name="index5h1"></a>Download</h1>
+
+<h2 id="referenceimplementationdbus-daemonandlibdbus"><a name="index1h2"></a>Reference Implementation (dbus-daemon and libdbus)</h2>
+
+<p>Released versions of D-Bus can be downloaded from the <a href="http://dbus.freedesktop.org/releases/dbus/">releases directory on dbus.freedesktop.org</a> and are available in all major Linux distributions. If in doubt, use your distribution's packages. </p>
+
+<p>The current <strong>stable</strong> branch is <a href="http://cgit.freedesktop.org/dbus/dbus/tree/NEWS?h=dbus-1.8">D-Bus 1.8.x</a>. This is the recommended version for most purposes. </p>
+
+<p>The current <strong>legacy</strong> branch is <a href="http://cgit.freedesktop.org/dbus/dbus/tree/NEWS?h=dbus-1.6">D-Bus 1.6.x</a>. This is still supported, but only for security fixes: only use these versions when upgrading from older stable releases, or preparing security updates for frozen/stable distributions.</p>
+
+<p>Older branches are unsupported and are unlikely to have any more releases, but distributors who still provide security support for an older version are invited to share backported patches via the older branches in the same git repository.</p>
+
+<p>The current <strong>development</strong> branch is  <a href="http://cgit.freedesktop.org/dbus/dbus/tree/NEWS?h=master">D-Bus 1.9.x</a>, which will lead to a 1.10.x stable branch in future.</p>
+
+<h2 id="bindingsandindependentimplementations"><a name="index2h2"></a>Bindings and Independent Implementations</h2>
+
+<p>Bindings and independent implementations are linked to from the <a href="../DBusBindings/">Bindings Page</a>. </p>
+
+<p>A binding wraps libdbus (and thus automatically gets e.g. new authentication mechanisms and other additions to libdbus), while a reimplementation codes the protocol from scratch (and thus avoids a dependency on the libdbus C library, but has to be kept in sync with new features). We are working on a hybrid approach where libdbus can be used to set up connections but bindings don't use the message queue or message marshaling from libdbus. </p>
+
+<h1 id="windowsport"><a name="index6h1"></a>Windows port</h1>
+
+<p>The Windows port from the windbus and dbus4win projects has been merged into the freedesktop dbus development branch and the spec has been updated with windows specific stuff. Many thanks to the people who worked on the windows port (in alphabetic order): </p>
+
+<p>Marcus Brinkmann, Nguyễn Thái Ngọc Duy, Christian Ehrlicher, Peter Kümmel, Tor Lillqvist, Ralf Habacker, Frank Osterfeld, Marc Mutz, Romain Pokrzywka, Ole André Vadla Ravnås, Sebastian Sauer </p>
+
+<p>The windows port is knowing to work on Windows XP, Windows Vista and Windows 7, supported compiler/sdk are MSVC 2010, mingw-w32/w64(gcc) and cygwin(gcc). </p>
+
+<p>Everyone interested in having stable dbus on windows is invited to test the implementation, to reports bugs and/or to file patches. </p>
+
+<h1 id="grabthesource"><a name="index7h1"></a>Grab the Source</h1>
+
+<p>The core dbus code and the language bindings are under version control using Git. There is a <a href="http://freedesktop.org/wiki/Infrastructure/git">nice tutorial for using git with freedesktop.org projects</a>. There is also <a href="http://www-128.ibm.com/developerworks/linux/library/l-git/">another tutorial at IBM Developerworks site</a>. </p>
+
+<p>All components of dbus are in the dbus/ subdirectory. </p>
+
+<p><a href="http://cgit.freedesktop.org/dbus/dbus/">View the reference implementation in gitweb</a> </p>
+
+<p>Anonymous git for reference implementation: git://anongit.freedesktop.org/git/dbus/dbus </p>
+
+<p>Developer git for reference implementation: <a href="ssh://git.freedesktop.org/git/dbus/dbus">ssh://git.freedesktop.org/git/dbus/dbus</a> </p>
+
+</div>
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="../DBusRemote/">DBusRemote</a>
+
+<a href="../DbusReleaseArchive/">DbusReleaseArchive</a>
+
+<a href="../Elektra/">Elektra</a>
+
+<a href="../../IntroductionToDBus/">IntroductionToDBus</a>
+
+<a href="../">Software</a>
+
+<a href="../../Specifications/config-spec/">Specifications/config-spec</a>
+
+<a href="../../Specifications/mpris-spec/">Specifications/mpris-spec</a>
+
+<a href="../jhbuild/">jhbuild</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Mon Jan 20 11:55:22 2014</span>
+<!-- Created <span class="date">Fri May 17 22:33:22 2013</span> -->
+</div>
+
+</div>
+
+
+<!-- from www -->
+</div>
+
+</div>
+
+</body>
+</html>

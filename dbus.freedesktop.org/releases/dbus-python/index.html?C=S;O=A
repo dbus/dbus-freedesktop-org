@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /releases/dbus-python</title>
+ </head>
+ <body>
+<h1>Index of /releases/dbus-python</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=D">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/releases/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="prerelease/">prerelease/</a></td><td align="right">04-May-2007 11:53  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.83.0.tar.gz.asc">dbus-python-0.83.0.tar.gz.asc</a></td><td align="right">23-Jul-2008 09:54  </td><td align="right">155 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.80.0.tar.gz.asc">dbus-python-0.80.0.tar.gz.asc</a></td><td align="right">24-Jan-2007 07:56  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.80.1.tar.gz.asc">dbus-python-0.80.1.tar.gz.asc</a></td><td align="right">24-Jan-2007 08:39  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.80.2.tar.gz.asc">dbus-python-0.80.2.tar.gz.asc</a></td><td align="right">13-Feb-2007 09:42  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.81.0.tar.gz.asc">dbus-python-0.81.0.tar.gz.asc</a></td><td align="right">09-May-2007 02:40  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.81.1.tar.gz.asc">dbus-python-0.81.1.tar.gz.asc</a></td><td align="right">04-Jun-2007 06:50  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.82.0.tar.gz.asc">dbus-python-0.82.0.tar.gz.asc</a></td><td align="right">19-Jun-2007 09:59  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.82.1.tar.gz.asc">dbus-python-0.82.1.tar.gz.asc</a></td><td align="right">11-Jul-2007 13:09  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.82.2.tar.gz.asc">dbus-python-0.82.2.tar.gz.asc</a></td><td align="right">01-Aug-2007 13:42  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.82.3.tar.gz.asc">dbus-python-0.82.3.tar.gz.asc</a></td><td align="right">27-Sep-2007 11:05  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.82.4.tar.gz.asc">dbus-python-0.82.4.tar.gz.asc</a></td><td align="right">10-Dec-2007 09:33  </td><td align="right">266 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.83.1.tar.gz.asc">dbus-python-0.83.1.tar.gz.asc</a></td><td align="right">18-Feb-2010 10:10  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.83.2.tar.gz.asc">dbus-python-0.83.2.tar.gz.asc</a></td><td align="right">02-Dec-2010 10:10  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-0.84.0.tar.gz.asc">dbus-python-0.84.0.tar.gz.asc</a></td><td align="right">25-May-2011 05:49  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-1.0.0.tar.gz.asc">dbus-python-1.0.0.tar.gz.asc</a></td><td align="right">24-Jan-2012 12:31  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-1.1.0.tar.gz.asc">dbus-python-1.1.0.tar.gz.asc</a></td><td align="right">09-May-2012 09:49  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-1.1.1.tar.gz.asc">dbus-python-1.1.1.tar.gz.asc</a></td><td align="right">25-Jun-2012 13:17  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-python-1.2.0.tar.gz.asc">dbus-python-1.2.0.tar.gz.asc</a></td><td align="right">08-May-2013 06:08  </td><td align="right">793 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.70.tar.gz">dbus-python-0.70.tar.gz</a></td><td align="right">17-Jul-2006 14:05  </td><td align="right"> 75K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.71.tar.gz">dbus-python-0.71.tar.gz</a></td><td align="right">24-Jul-2006 11:36  </td><td align="right">134K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.80.0.tar.gz">dbus-python-0.80.0.tar.gz</a></td><td align="right">24-Jan-2007 07:56  </td><td align="right">433K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.80.1.tar.gz">dbus-python-0.80.1.tar.gz</a></td><td align="right">24-Jan-2007 08:39  </td><td align="right">433K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.80.2.tar.gz">dbus-python-0.80.2.tar.gz</a></td><td align="right">13-Feb-2007 09:42  </td><td align="right">443K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.82.4.tar.gz">dbus-python-0.82.4.tar.gz</a></td><td align="right">10-Dec-2007 07:14  </td><td align="right">462K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.81.0.tar.gz">dbus-python-0.81.0.tar.gz</a></td><td align="right">09-May-2007 02:40  </td><td align="right">463K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.81.1.tar.gz">dbus-python-0.81.1.tar.gz</a></td><td align="right">04-Jun-2007 06:50  </td><td align="right">466K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.82.0.tar.gz">dbus-python-0.82.0.tar.gz</a></td><td align="right">19-Jun-2007 09:58  </td><td align="right">472K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.82.1.tar.gz">dbus-python-0.82.1.tar.gz</a></td><td align="right">11-Jul-2007 13:09  </td><td align="right">474K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.82.3.tar.gz">dbus-python-0.82.3.tar.gz</a></td><td align="right">27-Sep-2007 11:05  </td><td align="right">477K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.82.2.tar.gz">dbus-python-0.82.2.tar.gz</a></td><td align="right">01-Aug-2007 13:42  </td><td align="right">478K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.83.0.tar.gz">dbus-python-0.83.0.tar.gz</a></td><td align="right">23-Jul-2008 09:54  </td><td align="right">483K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.83.1.tar.gz">dbus-python-0.83.1.tar.gz</a></td><td align="right">18-Feb-2010 09:43  </td><td align="right">521K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.83.2.tar.gz">dbus-python-0.83.2.tar.gz</a></td><td align="right">02-Dec-2010 10:10  </td><td align="right">527K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-0.84.0.tar.gz">dbus-python-0.84.0.tar.gz</a></td><td align="right">25-May-2011 04:50  </td><td align="right">551K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-1.0.0.tar.gz">dbus-python-1.0.0.tar.gz</a></td><td align="right">24-Jan-2012 08:44  </td><td align="right">570K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-1.1.0.tar.gz">dbus-python-1.1.0.tar.gz</a></td><td align="right">09-May-2012 07:48  </td><td align="right">575K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-1.1.1.tar.gz">dbus-python-1.1.1.tar.gz</a></td><td align="right">25-Jun-2012 09:03  </td><td align="right">582K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dbus-python-1.2.0.tar.gz">dbus-python-1.2.0.tar.gz</a></td><td align="right">08-May-2013 06:08  </td><td align="right">588K</td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.22 (Debian) Server at dbus.freedesktop.org Port 80</address>
+</body></html>

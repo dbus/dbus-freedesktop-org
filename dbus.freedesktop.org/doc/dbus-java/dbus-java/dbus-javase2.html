@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>DBusConnection</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,html --> 
+<meta name="src" content="dbus-java.tex" /> 
+<meta name="date" content="2011-03-16 00:18:00" /> 
+<link rel="stylesheet" type="text/css" href="dbus-java.css" /> 
+</head><body 
+>
+   <!--l. 119--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase9.html" >next</a>] [<a 
+href="dbus-javase1.html" >prev</a>] [<a 
+href="dbus-javase1.html#taildbus-javase1.html" >prev-tail</a>] [<a 
+href="#taildbus-javase2.html">tail</a>] [<a 
+href="dbus-java.html#dbus-javase5.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x9-130002"></a>DBusConnection</h3>
+<!--l. 121--><p class="noindent" >The <span 
+class="cmtt-12">DBusConnection</span><span class="footnote-mark"><a 
+href="dbus-java10.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x9-13001f4"></a> 
+class provides methods for connecting to the bus, exporting objects, sending signals and getting
+references to remote objects.
+</p><!--l. 126--><p class="indent" >   <span 
+class="cmtt-12">DBusConnection </span>is a singleton class, multiple calls to <span 
+class="cmtt-12">getConnection </span>will return the same
+bus connection.
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+conn&#x00A0;=&#x00A0;DBusConnection.getConnection(DBusConnection.SESSION);
+</div>
+<!--l. 131--><p class="nopar" >
+</p><!--l. 133--><p class="indent" >   This creates a connection to the session bus, or returns the existing connection.
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+conn.addSigHandler(TestSignalInterface.TestSignal.class,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;new&#x00A0;SignalHandler());
+</div>
+<!--l. 139--><p class="nopar" >
+</p><!--l. 141--><p class="indent" >   This sets up a signal handler for the given signal type. SignalHandler.handle will be called
+in a new thread with an instance of TestSignalInterface.TestSignal when that signal is
+recieved.
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+conn.sendSignal(new&#x00A0;TestSignalInterface.TestSignal(
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"/foo/bar/com/Wibble",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"Bar",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;new&#x00A0;UInt32(42)));
+</div>
+<!--l. 150--><p class="nopar" >
+</p><!--l. 152--><p class="indent" >   This sends a signal of type <span 
+class="cmtt-12">TestSignalInterface.TestSignal</span>, from the object
+<span 
+class="cmti-12">&#8220;/foo/bar/com/Wibble&#8221; </span>with the arguments <span 
+class="cmti-12">&#8220;Bar&#8221; </span>and <span 
+class="cmtt-12">UInt32(42)</span>.
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+conn.exportObject("/Test",&#x00A0;new&#x00A0;testclass());
+</div>
+<!--l. 158--><p class="nopar" >
+</p><!--l. 160--><p class="indent" >   This exports the <span 
+class="cmtt-12">testclass </span>object on the path <span 
+class="cmti-12">&#8220;/Test&#8221;</span>
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+Introspectable&#x00A0;intro&#x00A0;=&#x00A0;(Introspectable)&#x00A0;conn.getRemoteObject(
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"foo.bar.Test",&#x00A0;"/Test",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Introspectable.class);
+</div>
+<!--l. 166--><p class="nopar" >
+</p><!--l. 168--><p class="indent" >   This gets a reference to the <span 
+class="cmti-12">&#8220;/Test&#8221; </span>object on the process with the name <span 
+class="cmti-12">&#8220;foo.bar.Test&#8221; </span>.
+The object implements the <span 
+class="cmtt-12">Introspectable </span>interface, and calls may be made to methods in
+that interface as if it was a local object.
+                                                                                      
+                                                                                      
+</p>
+   <div class="verbatim">
+String&#x00A0;data&#x00A0;=&#x00A0;intro.Introspect();
+</div>
+<!--l. 175--><p class="nopar" >
+</p><!--l. 177--><p class="indent" >   The Runtime Exception <span 
+class="cmtt-12">DBusExecutionException </span>may be thrown by any remote method if
+any part of the execution fails.
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x9-140002.1"></a>Asynchronous Calls</h4>
+<!--l. 182--><p class="noindent" >Calling a method on a remote object is synchronous, that is the thread will block until it has a
+reply. If you do not want to block you can use an asynchronous call.
+</p><!--l. 186--><p class="indent" >   There are two ways of making asynchronous calls. You can either call the
+<span 
+class="cmtt-12">callMethodAsync </span>function on the connection object, in which case you are returned a
+<span 
+class="cmtt-12">DBusAsyncReply</span><span class="footnote-mark"><a 
+href="dbus-java11.html#fn5x0"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x9-14001f5"></a> 
+object which can be used to check for a reply and get the return value. This is demonstrated in
+figure <a 
+href="#x9-140021">1<!--tex4ht:ref: fig:async --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                                      
+                                                                                      
+<a 
+ id="x9-140021"></a>
+                                                                                      
+                                                                                      
+<div class="center" 
+>
+<!--l. 194--><p class="noindent" >
+                                                                                      
+                                                                                      
+</p>
+<div class="verbatim">
+DBusAsyncReply&#x003C;Boolean&#x003E;&#x00A0;stuffreply&#x00A0;=
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;conn.callMethodAsync(remoteObject,&#x00A0;"methodname",&#x00A0;arg1,&#x00A0;arg2);
+&#x00A0;<br />...
+&#x00A0;<br />if&#x00A0;(stuffreply.hasReply())&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;Boolean&#x00A0;b&#x00A0;=&#x00A0;stuffreply.getReply();
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;...
+&#x00A0;<br />}
+</div>
+<!--l. 203--><p class="nopar" ></p></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Figure&#x00A0;1: </td><td  
+class="content">Calling an asynchronous method</td></tr></table><!--tex4ht:label?: x9-140021 -->
+                                                                                      
+                                                                                      
+   </td></tr></table></div><hr class="endfigure" />
+<!--l. 209--><p class="indent" >   Alternatively, you can register a callback with the connection using the <span 
+class="cmtt-12">callWithCallback</span>
+function on the connection object. In this case, your callback class (implementing the
+<span 
+class="cmtt-12">CallbackHandler</span><span class="footnote-mark"><a 
+href="dbus-java12.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x9-14003f6"></a> 
+interface will be called when the reply is returned from the bus.
+                                                                                      
+                                                                                      
+</p>
+   <!--l. 215--><div class="crosslinks"><p class="noindent">[<a 
+href="dbus-javase9.html" >next</a>] [<a 
+href="dbus-javase1.html" >prev</a>] [<a 
+href="dbus-javase1.html#taildbus-javase1.html" >prev-tail</a>] [<a 
+href="dbus-javase2.html" >front</a>] [<a 
+href="dbus-java.html#dbus-javase5.html" >up</a>] </p></div>
+<!--l. 215--><p class="indent" >   <a 
+ id="taildbus-javase2.html"></a>  </p> 
+</body></html> 

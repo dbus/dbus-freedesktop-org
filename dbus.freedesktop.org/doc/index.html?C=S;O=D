@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /doc</title>
+ </head>
+ <body>
+<h1>Index of /doc</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-specification.xml">dbus-specification.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">253K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-specification.html">dbus-specification.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">244K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/image2.gif" alt="[IMG]"></td><td><a href="diagram.png">diagram.png</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 77K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-tutorial.html">dbus-tutorial.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 67K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-tutorial.xml">dbus-tutorial.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 63K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="NEWS">NEWS</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 45K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-daemon.1.xml">dbus-daemon.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 35K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-daemon.1.html">dbus-daemon.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 35K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/image2.gif" alt="[IMG]"></td><td><a href="diagram.svg">diagram.svg</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 33K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-faq.html">dbus-faq.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 31K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="COPYING">COPYING</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 28K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-faq.xml">dbus-faq.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 27K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dcop-howto.txt">dcop-howto.txt</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 21K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="HACKING">HACKING</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 13K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-launch.1.xml">dbus-launch.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-test-plan.html">dbus-test-plan.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-launch.1.html">dbus-launch.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-test-plan.xml">dbus-test-plan.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">8.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-send.1.xml">dbus-send.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">6.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-send.1.html">dbus-send.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">6.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/hand.right.gif" alt="[   ]"></td><td><a href="README">README</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">6.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-run-session.1.xml">dbus-run-session.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">5.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-run-session.1.html">dbus-run-session.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">5.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="AUTHORS">AUTHORS</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">4.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-uuidgen.1.xml">dbus-uuidgen.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">4.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-monitor.1.xml">dbus-monitor.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">4.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-uuidgen.1.html">dbus-uuidgen.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">4.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-monitor.1.html">dbus-monitor.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">4.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="introspect.xsl">introspect.xsl</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">3.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="system-activation.txt">system-activation.txt</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">3.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dbus-cleanup-sockets.1.xml">dbus-cleanup-sockets.1.xml</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">2.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="dbus-cleanup-sockets.1.html">dbus-cleanup-sockets.1.html</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">2.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="busconfig.dtd">busconfig.dtd</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="introspect.dtd">introspect.dtd</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">1.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ChangeLog">ChangeLog</a></td><td align="right">30-Apr-2014 12:54  </td><td align="right">215 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-python/">dbus-python/</a></td><td align="right">01-Feb-2012 02:11  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-java/">dbus-java/</a></td><td align="right">15-Mar-2011 17:26  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="dbus-glib/">dbus-glib/</a></td><td align="right">12-Feb-2014 07:35  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="api/">api/</a></td><td align="right">08-Apr-2011 07:24  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.22 (Debian) Server at dbus.freedesktop.org Port 80</address>
+</body></html>
